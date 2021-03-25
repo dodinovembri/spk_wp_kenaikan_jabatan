@@ -5,7 +5,7 @@ class AuthController extends CI_Controller { // standar crud
 
     function __construct()
     {
-        // 
+        parent::__construct();
     }
 
 	public function index()
