@@ -1,9 +1,18 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>login</title>
+  <title>Form Login</title>
 </head>
 <body>
-<h3>hallooo </h3>
+  <h1>Silahkan login terlebih dahulu...</h1>
+ 
+    
+  </div>
+  <form method="post" action="">
+    <label>Username</label><br>
+    <input type="text" name="username" placeholder="Username"><br><br>
+    <label>Password</label><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <button type="submit">Login</button>
+  </form>
 </body>
 </html>
