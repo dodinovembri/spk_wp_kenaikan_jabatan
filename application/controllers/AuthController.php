@@ -10,9 +10,9 @@ class AuthController extends CI_Controller { // standar crud
 
 	public function index()
 	{
-        $this->load->view('templates/backend/header');
+        $this->load->view('templates/header');
         $this->load->view('auth/login');
-        $this->load->view('templates/backend/footer');
+        $this->load->view('templates/footer');
 	}
 
     public function create()
