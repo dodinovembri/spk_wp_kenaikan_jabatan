@@ -52,3 +52,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'AuthController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// routes for user
+$route['user'] = 'UserController';
+$route['user/create'] = 'UserController/create';
+$route['user/store'] = 'UserController/store';
+$route['user/edit/(:any)'] = 'UserController/edit/$1';
+$route['user/show/(:any)'] = 'UserController/show/$1';
+$route['user/update/(:any)'] = 'UserController/update/$1';
+$route['user/destroy/(:any)'] = 'UserController/destroy/$1';
+
+// routes for employee
+$route['employee'] = 'EmployeeController';
+$route['employee/create'] = 'EmployeeController/create';
+$route['employee/store'] = 'EmployeeController/store';
+$route['employee/edit/(:any)'] = 'EmployeeController/edit/$1';
+$route['employee/show/(:any)'] = 'EmployeeController/show/$1';
+$route['employee/update/(:any)'] = 'EmployeeController/update/$1';
+$route['employee/destroy/(:any)'] = 'EmployeeController/destroy/$1';
+
+// routes for rating
+$route['rating'] = 'RatingController';
+$route['rating/create'] = 'RatingController/create';
+$route['rating/store'] = 'RatingController/store';
+$route['rating/edit/(:any)'] = 'RatingController/edit/$1';
+$route['rating/show/(:any)'] = 'RatingController/show/$1';
+$route['rating/update/(:any)'] = 'RatingController/update/$1';
+$route['rating/destroy/(:any)'] = 'RatingController/destroy/$1';
+
+// routes for criteria
+$route['criteria'] = 'CriteriaController';
+$route['criteria/create'] = 'CriteriaController/create';
+$route['criteria/store'] = 'CriteriaController/store';
+$route['criteria/edit/(:any)'] = 'CriteriaController/edit/$1';
+$route['criteria/show/(:any)'] = 'CriteriaController/show/$1';
+$route['criteria/update/(:any)'] = 'CriteriaController/update/$1';
+$route['criteria/destroy/(:any)'] = 'CriteriaController/destroy/$1';
+
+// routes for criterion value
+$route['criterion_value'] = 'CriterionValueController';
+$route['criterion_value/create'] = 'CriterionValueController/create';
+$route['criterion_value/store'] = 'CriterionValueController/store';
+$route['criterion_value/edit/(:any)'] = 'CriterionValueController/edit/$1';
+$route['criterion_value/show/(:any)'] = 'CriterionValueController/show/$1';
+$route['criterion_value/update/(:any)'] = 'CriterionValueController/update/$1';
+$route['criterion_value/destroy/(:any)'] = 'CriterionValueController/destroy/$1';
