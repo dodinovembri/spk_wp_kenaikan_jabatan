@@ -6,6 +6,7 @@ class AuthController extends CI_Controller { // standar crud
     function __construct()
     {
         parent::__construct();
+        $this->load->model(['UserModel']);
     }
 
 	public function index()
@@ -53,11 +54,10 @@ class AuthController extends CI_Controller { // standar crud
         if ($check_auth) {
             $auth = array(
                     'id' => $check_auth->id,
-                    'name'  => $check_auth->name,
+                    'employee_id'  => $check_auth->name,
                     'email'     => $check_auth->email,
                     'role_id'   => $check_auth->role_id,
-                    'logged_in' => 1,
-                    'image' => $check_auth->image
+                    'logged_in' => 1
             );
 
             $this->session->set_userdata($auth);

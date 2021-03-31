@@ -8,7 +8,7 @@
 		<p class="login-box-msg">Sign in to start your session</p>
 
 
-		<form action="<?php echo base_url('/login'); ?>" method="post">
+		<form action="<?php echo base_url('auth/login'); ?>" method="POST">
 			<div class="form-group has-feedback">
 				<input type="email" class="form-control" placeholder="Email">
 				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -18,9 +18,9 @@
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
 			<div class="row">
-        <div class="col-xs-8">
-         
-        </div>
+			<div class="col-xs-8">
+			
+			</div>
 				<!-- /.col -->
 				<p></p>
 				<div class="col-xs-12">
