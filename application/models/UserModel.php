@@ -30,5 +30,12 @@ class UserModel extends CI_Model
     {
         $this->db->where('id', $id);
         return $this->db->delete($this->_table);
-    }            
+    } 
+    public function check_auth($username, $password)
+    {
+        // Check record to database
+        $this->db->where('email', $username);
+        $this->db->where('password', $password);
+        return $query = $this->db->get($this->_table);
+    }           
 }

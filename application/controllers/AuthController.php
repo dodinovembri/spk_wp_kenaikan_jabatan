@@ -44,4 +44,27 @@ class AuthController extends CI_Controller { // standar crud
     {
         // 
     }
+    public function login()
+    {
+        $username = $this->input->post('username');
+        $password = md5($this->input->post('password'));
+
+        $check_auth = $this->UserModel->check_auth($username, $password)->row();
+        if ($check_auth) {
+            $auth = array(
+                    'id' => $check_auth->id,
+                    'name'  => $check_auth->name,
+                    'email'     => $check_auth->email,
+                    'role_id'   => $check_auth->role_id,
+                    'logged_in' => 1,
+                    'image' => $check_auth->image
+            );
+
+            $this->session->set_userdata($auth);
+            return redirect(base_url('home'));
+        }else{
+            $this->session->set_flashdata('warning', "Username or Password is wrong!");
+            return redirect(base_url('login'));
+        }
+    }
 }

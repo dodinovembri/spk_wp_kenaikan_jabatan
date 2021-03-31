@@ -14,3 +14,4 @@ CREATE TABLE criterion_value (
 	PRIMARY KEY (id)
 );
 ```
+

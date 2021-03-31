@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 // using port
-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'';
+$config['base_url'] = 'http://localhost:8080/spk_wp_rani/';
 /*
 |--------------------------------------------------------------------------
 | Index File

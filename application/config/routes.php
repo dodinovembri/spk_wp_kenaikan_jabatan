@@ -62,6 +62,9 @@ $route['user/show/(:any)'] = 'UserController/show/$1';
 $route['user/update/(:any)'] = 'UserController/update/$1';
 $route['user/destroy/(:any)'] = 'UserController/destroy/$1';
 
+// routes for login
+// $route['login'] = 'AuthController/login';
+
 // routes for employee
 $route['employee'] = 'EmployeeController';
 $route['employee/create'] = 'EmployeeController/create';

@@ -7,7 +7,7 @@ CREATE TABLE users (
     employee_id INT NULL,
 	email VARCHAR(50) NULL,
     password VARCHAR(50) NULL,
-    role_id BIT DEFAULT '1',
+    role_id TINYINT NULL,
    	created_at TIMESTAMP NULL,
 	updated_at TIMESTAMP NULL,
    	created_by INT NULL,

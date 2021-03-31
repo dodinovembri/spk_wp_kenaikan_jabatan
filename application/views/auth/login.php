@@ -1,13 +1,14 @@
 <body class="body">
 <div class="login-box">
 	<div class="login-logo">
-		<a href="../../index2.html"><b>Login</b> Pages</a>
+		<a href="#"><b>Login</b> Pages</a>
 	</div>
 	<!-- /.login-logo -->
 	<div class="login-box-body">
 		<p class="login-box-msg">Sign in to start your session</p>
 
-		<form action="../../index2.html" method="post">
+
+		<form action="<?php echo base_url('/login'); ?>" method="post">
 			<div class="form-group has-feedback">
 				<input type="email" class="form-control" placeholder="Email">
 				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
