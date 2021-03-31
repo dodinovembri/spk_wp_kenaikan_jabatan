@@ -6,7 +6,7 @@ class AuthController extends CI_Controller { // standar crud
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['UserModel']);
+        $this->load->model(['UserModel', '']);
     }
 
 	public function index()
