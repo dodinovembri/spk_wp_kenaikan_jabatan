@@ -7,6 +7,9 @@ class AuthController extends CI_Controller { // standar crud
     {
         parent::__construct();
         $this->load->model(['UserModel', '']);
+        if ($this->session->userdata('logged_in') == 1) {
+            return redirect(base_url('home'));
+        }
     }
 
 	public function index()
