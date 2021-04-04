@@ -53,10 +53,11 @@ $route['default_controller'] = 'AuthController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// routes for login
+// routes for auth
 $route['login'] = 'AuthController';
 $route['auth/login'] = 'AuthController/login';
 $route['home'] = 'HomeController';
+$route['logout'] = 'HomeController/logout';
 
 // routes for user
 $route['user'] = 'UserController';
