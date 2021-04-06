@@ -9,7 +9,7 @@
 			<h1><small></small></h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active">Dashboard</li>
+				<li class="active">Pegawai</li>
 			</ol>
 		</section>
 
@@ -20,37 +20,74 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Employee</h3>
+							<h3 class="box-title">Data Pegawai</h3>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('employee/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 10%;">Tambah</button></a>
+							<a href="<?php echo base_url('employee/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 12%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
 							<br>
+							<?php if ($this->session->flashdata('success')) { ?>
+								<div class="alert alert-success alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<?php echo $this->session->flashdata('success'); ?>
+								</div>
+							<?php } elseif ($this->session->flashdata('warning')) { ?>
+								<div class="alert alert-warning" role="alert">
+									<?php echo $this->session->flashdata('warning'); ?>
+								</div>
+							<?php } ?>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>nik</th>
-										<th>name</th>
-										<th>gender</th>
-										<th>location</th>
-										<th>position</th>
+										<th>NIK</th>
+										<th>Nama</th>
+										<th>Kelamin</th>
+										<th>Lokasi</th>
+										<th>Posisi</th>
 										<th>Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php $this->load->helper('function'); ?>
-									<?php $no = 0; foreach ($employees as $key => $value) { $no++; ?>
+									<?php $no = 0;
+									foreach ($employees as $key => $value) {
+										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><?php echo $value->email; ?></td>
-											<td><?php echo check_role($value->role_id); ?></td>
+											<td><?php echo $value->nik; ?></td>
+											<td><?php echo $value->name; ?></td>
+											<td><?php echo $value->gender; ?></td>
+											<td><?php echo $value->location; ?></td>
+											<td><?php echo $value->position; ?></td>
 											<td>
-												<a href="<?php echo base_url('user/edit', $value->id) ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a> 
-												<a href="<?php echo base_url('user/destroy', $value->id) ?>"><i class="fa fa-trash"></i></a>
+												<a href="<?php echo base_url('employee/edit/');
+															echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
-									<?php } ?>								
+										<div class="modal modal-warning fade" id="delete">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span></button>
+														<h4 class="modal-title">Delete Data</h4>
+													</div>
+													<div class="modal-body">
+														<p>Kamu yakin ingin menghapus data ini?</p>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
+														<a href="<?php echo base_url('employee/destroy/');
+															echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
+													</div>
+												</div>
+												<!-- /.modal-content -->
+											</div>
+											<!-- /.modal-dialog -->
+										</div>
+									<?php } ?>
 							</table>
 						</div>
 						<!-- /.box-body -->

@@ -20,7 +20,7 @@
 <!-- /employee-->
 
             <li class="header">TRANSACTIONS</li>
-            <li class="<?php if ($this->uri->segment(1)=="employee")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-user"></i> <span>Employee</span></a></li>
+            <li class="<?php if ($this->uri->segment(1)=="employee")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-user"></i> <span>Pegawai</span></a></li>
 <!-- /rating-->
 
             <li><a href="<?php echo base_url('rating') ?>"><i class="fa fa-circle-o"></i> <span>Rating</span></a></li>
