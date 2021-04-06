@@ -20,34 +20,23 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Table With Full Features</h3>
+							<h3 class="box-title">Data Criteria</h3>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('user/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 10%;">Tambah</button></a>
+							<a href="<?= base_url(); ?>criteria/create"><button type="button" class="btn btn-block btn-primary" style="width: 8%;">Tambah</button></a>
 							<br>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>Email</th>
-										<th>Role</th>
+										<th>Nama kriteria</th>
+										<th>bobot</th>
 										<th>Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php $this->load->helper('function'); ?>
-									<?php $no = 0; foreach ($users as $key => $value) { $no++; ?>
-										<tr>
-											<td><?php echo $no; ?></td>
-											<td><?php echo $value->email; ?></td>
-											<td><?php echo check_role($value->role_id); ?></td>
-											<td>
-												<a href="<?php echo base_url('user/edit', $value->id) ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a> 
-												<a href="<?php echo base_url('user/destroy', $value->id) ?>"><i class="fa fa-trash"></i></a>
-											</td>
-										</tr>
-									<?php } ?>								
+																
 							</table>
 						</div>
 						<!-- /.box-body -->

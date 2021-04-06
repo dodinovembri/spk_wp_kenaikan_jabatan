@@ -20,7 +20,7 @@ class UserController extends CI_Controller {
 
     public function create()
     {
-        $data['employees'] = $this->EmployeeModel->get()->result();
+        $data['users'] = $this->UserModel->get()->result();
         
         $this->load->view('templates/header');
         $this->load->view('user/create', $data);

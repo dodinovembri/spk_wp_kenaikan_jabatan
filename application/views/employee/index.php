@@ -24,14 +24,17 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('user/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 10%;">Tambah</button></a>
+							<a href="<?php echo base_url('employee/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 10%;">Tambah</button></a>
 							<br>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>Email</th>
-										<th>Role</th>
+										<th>nik</th>
+										<th>name</th>
+										<th>gender</th>
+										<th>location</th>
+										<th>position</th>
 										<th>Aksi</th>
 									</tr>
 								</thead>
