@@ -29,19 +29,21 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') ?>">
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/../../plugins/iCheck/square/blue.css') ?>">
-
+    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/iCheck/square/blue.css') ?>">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') ?>">
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<?php
-if ($this->session->userdata('logged_in') != 1) { ?>
+<?php if ($this->session->userdata('logged_in') != 1) { ?>
     <style type="text/css">
         .body {
             background-color: #8ea9e0;
         }
     </style>
+
     <body class="body">
-<?php } else { ?>
-    <body class="hold-transition skin-blue sidebar-mini">
-<?php } ?>
+    <?php } else { ?>
+
+        <body class="hold-transition skin-blue sidebar-mini">
+        <?php } ?>

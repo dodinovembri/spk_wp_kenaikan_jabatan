@@ -6,11 +6,16 @@ class EmployeeController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model(['EmployeeModel']);
     }
 
 	public function index()
 	{
-        // 
+        $data['employees'] = $this->EmployeeModel->get()->result();
+
+        $this->load->view('templates/header');
+        $this->load->view('employee/index', $data);
+        $this->load->view('templates/footer');
 	}
 
     public function create()
