@@ -37,7 +37,7 @@
 									<input type="text" name="name" class="form-control" id="name" value="<?php echo $employee->name; ?>" placeholder="Masukkan Nama" required>
 								</div>
 								<div class="form-group">
-								<label for="name">Jenis Kelamin</label>
+								<label for="name">Gender</label>
 									<div class="radio">
 										<label>
 											<input type="radio" name="gender" id="gender1" value="1" <?php if ($employee->gender == 1) {echo "checked";} ?> required> Laki - laki <br>

@@ -9,7 +9,7 @@
 			<h1><small></small></h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active">Dashboard</li>
+				<li class="active">User</li>
 			</ol>
 		</section>
 
@@ -24,8 +24,18 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('user/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 10%;">Tambah</button></a>
+							<a href="<?php echo base_url('user/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;">Tambah user</button></a>
 							<br>
+							<?php if ($this->session->flashdata('success')) { ?>
+								<div class="alert alert-success alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<?php echo $this->session->flashdata('success'); ?>
+								</div>
+							<?php } elseif ($this->session->flashdata('warning')) { ?>
+								<div class="alert alert-warning" role="alert">
+									<?php echo $this->session->flashdata('warning'); ?>
+								</div>
+							<?php } ?>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
@@ -43,8 +53,27 @@
 											<td><?php echo $value->email; ?></td>
 											<td><?php echo check_role($value->role_id); ?></td>
 											<td>
-												<a href="<?php echo base_url('user/edit', $value->id) ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a> 
-												<a href="<?php echo base_url('user/destroy', $value->id) ?>"><i class="fa fa-trash"></i></a>
+												<a href="<?php echo base_url('user/edit/');
+												 echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></a>
+											</td>
+										</tr>
+										<div class="modal modal-warning fade" id="delete">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span></button>
+														<h4 class="modal-title">Delete Data</h4>
+													</div>
+													<div class="modal-body">
+														<p>Kamu yakin ingin menghapus data ini?</p>
+													</div>
+													<div class="modal-footer">
+													<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
+												<a href="<?php echo base_url('user/destroy/'); 
+												echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
+													</div>
 											</td>
 										</tr>
 									<?php } ?>								

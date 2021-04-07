@@ -20,10 +20,9 @@ class CriteriaController extends CI_Controller {
 
     public function create()
     {
-        $data['criteria'] = $this->CriteriaModel->get()->result();
-        
+                
         $this->load->view('templates/header');
-        $this->load->view('criteria/create', $data);
+        $this->load->view('criteria/create');
         $this->load->view('templates/footer');
     }
 
