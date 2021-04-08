@@ -21,7 +21,7 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Tambah Data</h3>
+							<h3 class="box-title">Tambah Data Pegawai</h3>
 						</div>
 
 						<!-- /.box-header -->

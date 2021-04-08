@@ -21,7 +21,7 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Kriteria</h3>
+							<h3 class="box-title">Data Nilai Kriteria</h3>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
