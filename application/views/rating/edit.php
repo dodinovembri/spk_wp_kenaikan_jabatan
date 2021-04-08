@@ -9,9 +9,10 @@
 			<h1><small></small></h1>
 			<ol class="breadcrumb">
 				<li><a href="<?php echo base_url('/'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li><a href="<?php echo base_url('criteria'); ?>"> Kriteria</a></li>
-				<li><a href="<?php echo base_url('criterion_values/'); echo $this->session->userdata('criteria_id') ?>"> Nilai Kriteria</a></li>
-				<li class="active">Edit Data Nilai Kriteria</li>
+				<li><a href="<?php echo base_url('employee'); ?>"> Pegawai</a></li>
+				<li><a href="<?php echo base_url('ratings/');
+								echo $this->session->userdata('employee_id') ?>"> Rating Pegawai</a></li>
+				<li class="active">Edit Data Rating Pegawai</li>
 			</ol>
 		</section>
 
@@ -22,26 +23,27 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Edit Data Nilai Kriteria</h3>
+							<h3 class="box-title">Edit Data Rating Pegawai</h3>
 						</div>
 
 						<!-- /.box-header -->
 						<!-- form start -->
-						<form role="form" action="<?php echo base_url('criterion_value/update/'); echo $criterion_value->id; ?>" method="post">
+						<form role="form" action="<?php echo base_url('rating/update/'); echo $rating->id; ?>" method="post">
 							<div class="box-body">
-								<div class="form-group">
-									<label for="exampleInputCriteriaName">Deskripsi</label>
-									<input type="text" name="information" value="<?php echo $criterion_value->information; ?>" class="form-control" id="exampleInputCriteriaName" placeholder="Masukkan nama nilai kriteria" required>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputBobot">Nilai</label>
-									<input type="text" name="score" value="<?php echo $criterion_value->score; ?>" class="form-control" id="exampleInputPassword1" placeholder="Masukkan nilai kriteria" required>
-								</div>
+								<?php foreach ($criterion_values as $key => $value) { ?>
+									<div class="form-group">
+										<label for="exampleInputCriteriaName">Score</label>
+										<select class="form-control" name="criterion_value_id" required="">
+											<option value="">Pilih</option>
+												<option value="<?php echo $value->id; ?>"><?php echo $value->information; ?></option>
+										</select>
+									</div>
+								<?php } ?>
 								<!-- /.box-body -->
 
 								<div class="box-footer">
 									<button type="submit" class="btn btn-primary">Submit</button>
-									<a href="<?php echo base_url('criterion_values/'); echo $this->session->userdata('criteria_id') ?>"><button type="button" class="btn btn-danger">Batal</button></a>
+									<a href="<?php echo base_url('ratings/'); echo $this->session->userdata('employee_id')  ?>"><button type="button" class="btn btn-danger">Batal</button></a>
 								</div>
 						</form>
 

@@ -25,7 +25,7 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('criterion_value/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
+							<a href="<?php echo base_url('rating/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
 							<br>
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success alert-dismissible" role="alert">
@@ -44,7 +44,6 @@
 										<th>Pegawai</th>
 										<th>Kriteria</th>
 										<th>Deskripsi</th>
-										<th>Nilai</th>
 										<th>Aksi</th>
 									</tr>
 								</thead>
@@ -56,10 +55,9 @@
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value->employee_id; ?></td>
 											<td><?php echo $value->criteria_id; ?></td>
-											<td><?php echo $value->information; ?></td>
-											<td><?php echo $value->score; ?></td>
+											<td><?php echo $value->criterion_value_id; ?></td>
 											<td>
-												<a href="<?php echo base_url('criterion_value/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a href="<?php echo base_url('rating/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
@@ -76,7 +74,7 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
-														<a href="<?php echo base_url('criterion_value/destroy/');
+														<a href="<?php echo base_url('rating/destroy/');
 																	echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
 													</div>
 												</div>

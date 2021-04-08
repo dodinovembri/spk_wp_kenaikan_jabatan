@@ -36,5 +36,11 @@ class RatingModel extends CI_Model
     {
         $this->db->where('id', $id);
         return $this->db->delete($this->_table);
-    }            
+    }
+    
+    public function destroyAllById($id)
+    {
+        $this->db->where('employee_id', $id);
+        return $this->db->delete($this->_table);
+    }    
 }
