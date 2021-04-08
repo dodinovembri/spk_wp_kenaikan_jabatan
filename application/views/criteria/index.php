@@ -9,7 +9,7 @@
 			<h1><small></small></h1>
 			<ol class="breadcrumb">
 				<li><a href="<?php echo base_url('/'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active">Dashboard</li>
+				<li class="active">Kriteria</li>
 			</ol>
 		</section>
 
@@ -53,7 +53,7 @@
 										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><a href="<?php echo base_url('criterion_value/'); echo $value->id; ?>"><b><?php echo $value->criteria_code; ?></b></a></td>
+											<td><a href="<?php echo base_url('criterion_values/'); echo $value->id; ?>"><b><?php echo $value->criteria_code; ?></b></a></td>
 											<td><?php echo $value->criteria_name; ?></td>
 											<td><?php echo check_criteria_type($value->criteria_type); ?></td>
 											<td><?php echo $value->criteria_weight; ?></td>

@@ -9,7 +9,7 @@
 			<h1><small></small></h1>
 			<ol class="breadcrumb">
 				<li><a href="<?php echo base_url('/'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li><a href="<?php echo base_url('criteria'); ?>"><i class="fa fa-dashboard"></i> Kriteria</a></li>
+				<li><a href="<?php echo base_url('criteria'); ?>"> Kriteria</a></li>
 				<li class="active">Nilai Kriteria</li>
 			</ol>
 		</section>
@@ -57,8 +57,7 @@
 											<td><?php echo $value->information; ?></td>
 											<td><?php echo $value->score; ?></td>
 											<td>
-												<a href="<?php echo base_url('criteria/edit/');
-															echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a href="<?php echo base_url('criterion_value/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
@@ -75,7 +74,7 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
-														<a href="<?php echo base_url('criteria/destroy/');
+														<a href="<?php echo base_url('criterion_value/destroy/');
 																	echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
 													</div>
 												</div>

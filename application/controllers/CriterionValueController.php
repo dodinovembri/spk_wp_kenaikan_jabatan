@@ -33,20 +33,17 @@ class CriterionValueController extends CI_Controller {
     public function store()
     {
         $criteria_id = $this->session->userdata('criteria_id');
-        $description = $this->input->post('description');
-        $value = $this->input->post('value');
-        $status = $this->input->post('status');
-
         $data = array(
             'criteria_id' => $criteria_id,
-            'description' => $description,
-            'value' => $value,
-            'status' => $status
+            'information' => $this->input->post('information'),
+            'score' => $this->input->post('score'),
+            'created_at'      => date("Y-m-d H-i-s"),
+            'created_by'      => $this->session->userdata('id')
         );
 
-        $insert = $this->CriterionValueModel->insert($data);
-        $this->session->set_flashdata('success', "Success create criterion value!");
-        return redirect("criterion_value/$criteria_id");
+        $this->CriterionValueModel->insert($data);
+        $this->session->set_flashdata('success', "Data nilai kriteria berhasil ditambahkan!");
+        return redirect("criterion_values/$criteria_id");
    
     }
 
@@ -57,7 +54,7 @@ class CriterionValueController extends CI_Controller {
 
     public function edit($id)
     {
-        $data['criterion_value'] = $this->CriterionValueModel->get_data($id)->row();
+        $data['criterion_value'] = $this->CriterionValueModel->getById($id)->row();
 
         $this->load->view('templates/header');
         $this->load->view('criterion_value/edit', $data);
@@ -67,26 +64,23 @@ class CriterionValueController extends CI_Controller {
     public function update($id)
     {
         $criteria_id = $this->session->userdata('criteria_id');
-        $description = $this->input->post('description');
-        $value = $this->input->post('value');
-        $status = $this->input->post('status');
-
         $data = array(
-            'description' => $description,
-            'value' => $value,
-            'status' => $status
+            'information' => $this->input->post('information'),
+            'score' => $this->input->post('score'),
+            'updated_at'      => date("Y-m-d H-i-s"),
+            'updated_by'      => $this->session->userdata('id')
         );
 
-        $update = $this->CriterionValueModel->update($data, $id);
-        $this->session->set_flashdata('success', "Success update data!");
-        return redirect(base_url("criterion_value/$criteria_id"));      
+        $this->CriterionValueModel->update($data, $id);
+        $this->session->set_flashdata('success', "Data nilai kriteria berhasil diubah!");
+        return redirect(base_url("criterion_values/$criteria_id"));      
     }
 
     public function destroy($id)
     {
         $criteria_id = $this->session->userdata('criteria_id');
-        $delete = $this->CriterionValueModel->destroy($id);        
-        $this->session->set_flashdata('success', "Success deleted data!");
-        return redirect(base_url("criterion_value/$criteria_id"));
+        $this->CriterionValueModel->destroy($id);
+        $this->session->set_flashdata('success', "Data nilai kriteria berhasil dihapus!");
+        return redirect(base_url("criterion_values/$criteria_id"));
     }
 }

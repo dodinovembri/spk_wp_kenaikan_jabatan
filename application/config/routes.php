@@ -79,7 +79,7 @@ $route['employee/update/(:any)'] = 'EmployeeController/update/$1';
 $route['employee/destroy/(:any)'] = 'EmployeeController/destroy/$1';
 
 // routes for rating
-$route['rating'] = 'RatingController';
+$route['ratings/(:any)'] = 'RatingController/index/$1';
 $route['rating/create'] = 'RatingController/create';
 $route['rating/store'] = 'RatingController/store';
 $route['rating/edit/(:any)'] = 'RatingController/edit/$1';
@@ -97,10 +97,19 @@ $route['criteria/update/(:any)'] = 'CriteriaController/update/$1';
 $route['criteria/destroy/(:any)'] = 'CriteriaController/destroy/$1';
 
 // routes for criterion value
-$route['criterion_value/(:any)'] = 'CriterionValueController/index/$1';
+$route['criterion_values/(:any)'] = 'CriterionValueController/index/$1';
 $route['criterion_value/create'] = 'CriterionValueController/create';
 $route['criterion_value/store'] = 'CriterionValueController/store';
 $route['criterion_value/edit/(:any)'] = 'CriterionValueController/edit/$1';
 $route['criterion_value/show/(:any)'] = 'CriterionValueController/show/$1';
 $route['criterion_value/update/(:any)'] = 'CriterionValueController/update/$1';
 $route['criterion_value/destroy/(:any)'] = 'CriterionValueController/destroy/$1';
+
+// routes for ranking
+$route['ranking'] = 'RankingController';
+$route['ranking/create'] = 'RankingController/create';
+$route['ranking/store'] = 'RankingController/store';
+$route['ranking/edit/(:any)'] = 'RankingController/edit/$1';
+$route['ranking/show/(:any)'] = 'RankingController/show/$1';
+$route['ranking/update/(:any)'] = 'RankingController/update/$1';
+$route['ranking/destroy/(:any)'] = 'RankingController/destroy/$1';

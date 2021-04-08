@@ -18,7 +18,13 @@ class RatingModel extends CI_Model
     {
         $this->db->where('id', $id);
         return $this->db->get($this->_table);
-    }   
+    } 
+    
+    public function getByIds($id)
+    {
+        $this->db->where('employee_id', $id);
+        return $this->db->get($this->_table);
+    }    
 
     public function update($data, $id)
     {

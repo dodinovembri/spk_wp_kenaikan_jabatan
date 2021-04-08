@@ -20,10 +20,10 @@
             <!-- /employee-->
 
             <li class="header">TRANSACTIONS</li>
-            <li class="<?php if ($this->uri->segment(1) == "employee")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
+            <li class="<?php if ($this->uri->segment(1) == "employee" || $this->uri->segment(1) == "ratings" || $this->uri->segment(1) == "rating")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
             <!-- /rating-->
 
-            <li><a href="<?php echo base_url('rating') ?>"><i class="fa fa-circle-o"></i> <span>Rating</span></a></li>
+            <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Ranking</span></a></li>
 
             <!-- /user-->
 
@@ -32,7 +32,7 @@
 
             <!-- /criteria-->
 
-            <li class="<?php if ($this->uri->segment(1) == "criteria" || $this->uri->segment(1) == "criterion_value")  echo "active"; ?>"><a href="<?php echo base_url('criteria') ?>"><i class="fa fa-laptop"></i> <span>Kriteria</span></a></li>
+            <li class="<?php if ($this->uri->segment(1) == "criteria" || $this->uri->segment(1) == "criterion_value" || $this->uri->segment(1) == "criterion_values")  echo "active"; ?>"><a href="<?php echo base_url('criteria') ?>"><i class="fa fa-laptop"></i> <span>Kriteria</span></a></li>
 
 
         </ul>

@@ -8,8 +8,9 @@
 		<section class="content-header">
 			<h1><small></small></h1>
 			<ol class="breadcrumb">
-				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active">Pegawai</li>
+				<li><a href="<?php echo base_url('/'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+				<li><a href="<?php echo base_url('employee'); ?>"> Pegawai</a></li>
+				<li class="active">Rating Pegawai</li>
 			</ol>
 		</section>
 
@@ -20,11 +21,11 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Pegawai</h3>
+							<h3 class="box-title">Data Rating Pegawai</h3>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('employee/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
+							<a href="<?php echo base_url('criterion_value/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
 							<br>
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success alert-dismissible" role="alert">
@@ -40,31 +41,26 @@
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>NIK</th>
-										<th>Nama</th>
-										<th>Gender</th>
-										<th>Email</th>
-										<th>Lokasi</th>
-										<th>Posisi</th>
+										<th>Pegawai</th>
+										<th>Kriteria</th>
+										<th>Deskripsi</th>
+										<th>Nilai</th>
 										<th>Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php $this->load->helper('function'); ?>
 									<?php $no = 0;
-									foreach ($employees as $key => $value) {
+									foreach ($employee_ratings as $key => $value) {
 										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><a href="<?php echo base_url('ratings/'); echo $value->id; ?>"><b><?php echo $value->nik; ?></b></a></td>
-											<td><?php echo $value->name; ?></td>
-											<td><?php echo check_gender($value->gender); ?></td>
-											<td><?php echo $value->email ?></td>
-											<td><?php echo $value->location; ?></td>
-											<td><?php echo $value->position; ?></td>
+											<td><?php echo $value->employee_id; ?></td>
+											<td><?php echo $value->criteria_id; ?></td>
+											<td><?php echo $value->information; ?></td>
+											<td><?php echo $value->score; ?></td>
 											<td>
-												<a href="<?php echo base_url('employee/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
-												<a data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
+												<a href="<?php echo base_url('criterion_value/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->id; ?>">
@@ -80,8 +76,8 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
-														<a href="<?php echo base_url('employee/destroy/');
-															echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
+														<a href="<?php echo base_url('criterion_value/destroy/');
+																	echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
 													</div>
 												</div>
 												<!-- /.modal-content -->
@@ -89,6 +85,9 @@
 											<!-- /.modal-dialog -->
 										</div>
 									<?php } ?>
+
+								<tbody>
+
 							</table>
 						</div>
 						<!-- /.box-body -->
