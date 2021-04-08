@@ -44,6 +44,7 @@ class UserController extends CI_Controller
             'employee_id'      => $employee->id,
             'email'    => $employee->email,
             'password'    => $password,
+            'role_id' => $this->input->post('role'),
             'created_at' => date("Y-m-d H-i-s"),
             'created_by' => $this->session->userdata('id')
         );
@@ -70,8 +71,7 @@ class UserController extends CI_Controller
     public function update($id)
     {
         $data = array(
-            'email'      => $this->input->post('email'),
-            'role_id'    => $this->input->post('role_id'),
+            'role_id'    => $this->input->post('role'),
             'updated_at' => date("Y-m-d H-i-s"),
             'updated_by' => $this->session->userdata('id')
         );

@@ -26,7 +26,7 @@
 
 						<!-- /.box-header -->
 						<!-- form start -->
-						<form role="form" action="<?php echo base_url('employee/store') ?>" method="post">
+						<form role="form" action="<?php echo base_url('employee/store') ?>" method="post" enctype="multipart/form-data">
 							<div class="box-body">
 								<div class="form-group">
 									<label for="nik">NIK</label>
@@ -48,6 +48,10 @@
 								<div class="form-group">
 									<label for="email">Email</label>
 									<input type="text" name="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+								</div>
+								<div class="form-group">
+									<label for="image">Image</label>
+									<input type="file" name="image" class="form-control" id="image">
 								</div>
 								<div class="form-group">
 									<label for="location">Lokasi</label>

@@ -43,9 +43,9 @@
 										<option value="">Pilih</option>
 										<option value="0">Administrator</option>
 										<option value="1">Leader</option>
-										<option value="3">Interviewer</option>
-										<option value="4">Direktur</option>
-										<option value="5">Employee</option>
+										<option value="2">Interviewer</option>
+										<option value="3">Direktur</option>
+										<option value="4">Employee</option>
 									</select>
 								</div>
 

@@ -113,3 +113,12 @@ $route['ranking/edit/(:any)'] = 'RankingController/edit/$1';
 $route['ranking/show/(:any)'] = 'RankingController/show/$1';
 $route['ranking/update/(:any)'] = 'RankingController/update/$1';
 $route['ranking/destroy/(:any)'] = 'RankingController/destroy/$1';
+
+// routes for profile
+$route['profile'] = 'ProfileController';
+$route['profile/create'] = 'ProfileController/create';
+$route['profile/store/(:any)'] = 'ProfileController/store/$1';
+$route['profile/store_pw/(:any)'] = 'ProfileController/store_pw/$1';
+$route['profile/edit/(:any)'] = 'ProfileController/edit/$1';
+$route['profile/update/(:any)'] = 'ProfileController/update/$1';
+$route['profile/destroy/(:any)'] = 'ProfileController/destroy/$1';

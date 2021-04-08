@@ -18,9 +18,14 @@ class EmployeeModel extends CI_Model
     {
         $this->db->where('id', $id);
         return $this->db->get($this->_table);
-    }   
-
+    }  
     
+    public function getByIds($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get($this->_table);
+    }      
+
     public function getByExclude($employee_id)
     {        
         $this->db->where_not_in('id', $employee_id);
@@ -37,5 +42,10 @@ class EmployeeModel extends CI_Model
     {
         $this->db->where('id', $id);
         return $this->db->delete($this->_table);
-    }            
+    }      
+    
+    public function count()
+    {
+        return $this->db->count_all($this->_table);
+    }
 }

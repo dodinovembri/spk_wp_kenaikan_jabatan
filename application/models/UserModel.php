@@ -38,4 +38,9 @@ class UserModel extends CI_Model
         $this->db->where('password', $password);
         return $query = $this->db->get($this->_table);
     }           
+
+    public function count()
+    {
+        return $this->db->count_all($this->_table);
+    }
 }

@@ -28,20 +28,49 @@ class EmployeeController extends CI_Controller
 
     public function store()
     {
-        $data = array(
-            'name'       => $this->input->post('name'),
-            'nik'        => $this->input->post('nik'),
-            'gender'     => $this->input->post('gender'),
-            'email'      => $this->input->post('email'),
-            'location'   => $this->input->post('location'),
-            'position'   => $this->input->post('position'),
-            'created_at' => date("Y-m-d H-i-s"),
-            'created_by' => $this->session->userdata('id')
-        );
+        // for image
+        $image = uniqid();
+        $config['upload_path']          = './uploads/employee/';
+        $config['allowed_types']        = 'gif|jpg|png';            
+        $config['file_name']            = $image;
 
-        $this->EmployeeModel->insert($data);
-        $this->session->set_flashdata('success', "Data pegawai berhasil ditambahkan!");
-        return redirect(base_url('employee'));
+        $this->load->library('upload', $config); 
+
+        if ($this->upload->do_upload('image'))
+        {
+            $data = array(
+                'name'       => $this->input->post('name'),
+                'nik'        => $this->input->post('nik'),
+                'gender'     => $this->input->post('gender'),
+                'email'      => $this->input->post('email'),
+                'image'      => $this->upload->data('file_name'),
+                'location'   => $this->input->post('location'),
+                'position'   => $this->input->post('position'),
+                'created_at' => date("Y-m-d H-i-s"),
+                'created_by' => $this->session->userdata('id')
+            );
+    
+            $this->EmployeeModel->insert($data);
+            $this->session->set_flashdata('success', "Data pegawai berhasil ditambahkan!");
+            return redirect(base_url('employee'));            
+        }
+        else
+        {                          
+            $data = array(
+                'name'       => $this->input->post('name'),
+                'nik'        => $this->input->post('nik'),
+                'gender'     => $this->input->post('gender'),
+                'email'      => $this->input->post('email'),
+                'location'   => $this->input->post('location'),
+                'position'   => $this->input->post('position'),
+                'created_at' => date("Y-m-d H-i-s"),
+                'created_by' => $this->session->userdata('id')
+            );
+    
+            $this->EmployeeModel->insert($data);
+            $this->session->set_flashdata('success', "Data pegawai berhasil ditambahkan!");
+            return redirect(base_url('employee'));
+        }
     }
 
     public function show($id)
@@ -60,19 +89,47 @@ class EmployeeController extends CI_Controller
 
     public function update($id)
     {
-        $data = array(
-            'name'       => $this->input->post('name'),
-            'nik'        => $this->input->post('nik'),
-            'gender'     => $this->input->post('gender'),
-            'location'   => $this->input->post('location'),
-            'position'   => $this->input->post('position'),
-            'updated_at' => date("Y-m-d H-i-s"),
-            'updated_by' => $this->session->userdata('id')
-        );
+        // for image
+        $image = uniqid();
+        $config['upload_path']          = './uploads/employee/';
+        $config['allowed_types']        = 'gif|jpg|png';            
+        $config['file_name']            = $image;
 
-        $this->EmployeeModel->update($data, $id);
-        $this->session->set_flashdata('success', "Data pegawai berhasil diubah!");
-        return redirect(base_url('employee'));
+        $this->load->library('upload', $config); 
+
+        if ($this->upload->do_upload('image'))
+        {
+            $data = array(
+                'name'       => $this->input->post('name'),
+                'nik'        => $this->input->post('nik'),
+                'gender'     => $this->input->post('gender'),
+                'image'      => $this->upload->data('file_name'),
+                'location'   => $this->input->post('location'),
+                'position'   => $this->input->post('position'),
+                'updated_at' => date("Y-m-d H-i-s"),
+                'updated_by' => $this->session->userdata('id')
+            );
+    
+            $this->EmployeeModel->update($data, $id);
+            $this->session->set_flashdata('success', "Data pegawai berhasil diubah!");
+            return redirect(base_url('employee'));          
+        }
+        else
+        {                          
+            $data = array(
+                'name'       => $this->input->post('name'),
+                'nik'        => $this->input->post('nik'),
+                'gender'     => $this->input->post('gender'),
+                'location'   => $this->input->post('location'),
+                'position'   => $this->input->post('position'),
+                'updated_at' => date("Y-m-d H-i-s"),
+                'updated_by' => $this->session->userdata('id')
+            );
+    
+            $this->EmployeeModel->update($data, $id);
+            $this->session->set_flashdata('success', "Data pegawai berhasil diubah!");
+            return redirect(base_url('employee'));
+        }
     }
 
     public function destroy($id)

@@ -6,7 +6,7 @@ class AuthController extends CI_Controller { // standar crud
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['UserModel', '']);
+        $this->load->model(['UserModel', 'EmployeeModel']);
         if ($this->session->userdata('logged_in') == 1) {
             return redirect(base_url('home'));
         }
@@ -55,14 +55,18 @@ class AuthController extends CI_Controller { // standar crud
 
         $check_auth = $this->UserModel->check_auth($username, $password)->row();
         if ($check_auth) {
+            $employee = $this->EmployeeModel->getById($check_auth->employee_id)->row();
+            $role_name = check_role($check_auth->role_id);
             $auth = array(
-                    'id' => $check_auth->id,
-                    'employee_id'  => $check_auth->name,
+                    'id'        => $check_auth->id,
+                    'name'      => $employee->name,
                     'email'     => $check_auth->email,
                     'role_id'   => $check_auth->role_id,
-                    'logged_in' => 1
+                    'role_name' => $role_name,
+                    'image'     => $employee->image,
+                    'logged_in' => 1,
             );
-
+            
             $this->session->set_userdata($auth);
             return redirect(base_url('home'));
         }else{

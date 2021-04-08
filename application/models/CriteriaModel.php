@@ -30,5 +30,10 @@ class CriteriaModel extends CI_Model
     {
         $this->db->where('id', $id);
         return $this->db->delete($this->_table);
-    }            
+    }      
+    
+    public function count()
+    {
+        return $this->db->count_all($this->_table);
+    }
 }

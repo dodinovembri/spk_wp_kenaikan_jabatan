@@ -6,12 +6,17 @@ class HomeController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model(['EmployeeModel', 'CriteriaModel', 'UserModel']);
     }
 
 	public function index()
 	{
+        $data['employees'] = $this->EmployeeModel->count();
+        $data['criterias'] = $this->CriteriaModel->count();
+        $data['users']     = $this->UserModel->count();
+
         $this->load->view('templates/header');
-        $this->load->view('home/index');
+        $this->load->view('home/index', $data);
         $this->load->view('templates/footer');
 	}
 
