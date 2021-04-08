@@ -29,25 +29,12 @@
 						<form role="form" action="<?php echo base_url('criteria/store') ?>" method="post">
 							<div class="box-body">
 								<div class="form-group">
-									<label for="exampleInputCriteriaName">Kode Kriteria</label>
+									<label for="exampleInputCriteriaName">Deskripsi</label>
 									<input type="text" name="criteria_code" class="form-control" id="exampleInputCriteriaName" placeholder="Masukkan kode kriteria" required>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputBobot">Nama Kriteria</label>
+									<label for="exampleInputBobot">Nilai</label>
 									<input type="text" name="criteria_name" class="form-control" id="exampleInputPassword1" placeholder="Masukkan nama kriteria" required>
-								</div>
-								<div class="form-group">
-									<label for="name">Tipe</label>
-									<div class="radio">
-										<label>
-											<input type="radio" name="criteria_type" id="gender1" value="0" checked required> Cost <br>
-											<input type="radio" name="criteria_type" id="gender1" value="1" required> Benefit
-										</label>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputBobot">Bobot</label>
-									<input type="number" name="criteria_weight" class="form-control" id="exampleInputPassword1" placeholder="Masukkan bobot">
 								</div>
 								<!-- /.box-body -->
 

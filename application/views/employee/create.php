@@ -46,6 +46,10 @@
 									</div>
 								</div>
 								<div class="form-group">
+									<label for="email">Email</label>
+									<input type="text" name="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+								</div>
+								<div class="form-group">
 									<label for="location">Lokasi</label>
 									<input type="text" name="location" class="form-control" id="location" placeholder="Masukkan Lokasi">
 								</div>

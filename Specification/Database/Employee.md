@@ -7,6 +7,7 @@ CREATE TABLE employee (
 	name VARCHAR(100) NULL,
 	nik VARCHAR(100) NULL,
 	gender TINYINT NULL,
+	email VARCHAR(255) NULL,
 	location TEXT NULL,
 	position VARCHAR(255) NULL,
    	created_at TIMESTAMP NULL,

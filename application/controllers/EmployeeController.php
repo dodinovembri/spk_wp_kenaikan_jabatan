@@ -32,6 +32,7 @@ class EmployeeController extends CI_Controller
             'name'       => $this->input->post('name'),
             'nik'        => $this->input->post('nik'),
             'gender'     => $this->input->post('gender'),
+            'email'      => $this->input->post('email'),
             'location'   => $this->input->post('location'),
             'position'   => $this->input->post('position'),
             'created_at' => date("Y-m-d H-i-s"),
@@ -76,7 +77,7 @@ class EmployeeController extends CI_Controller
 
     public function destroy($id)
     {
-        $delete = $this->EmployeeModel->destroy($id);        
+        $this->EmployeeModel->destroy($id);        
         $this->session->set_flashdata('success', "Data pegawai berhasil dihapus!");
         return redirect(base_url('employee'));
     }

@@ -17,4 +17,26 @@
         }
     }
 
+    if (!function_exists('check_gender')) {
+        function check_gender($gender)
+        {
+            if ($gender == 0) {
+                return "Perempuan";
+            }elseif ($gender == 1) {
+                return "Laki-laki";
+            }
+        }
+    }  
+    
+    if (!function_exists('check_criteria_type')) {
+        function check_criteria_type($criteria_type)
+        {
+            if ($criteria_type == 0) {
+                return "Cost";
+            }elseif ($criteria_type == 1) {
+                return "Benefit";
+            }
+        }
+    }      
+
 ?>

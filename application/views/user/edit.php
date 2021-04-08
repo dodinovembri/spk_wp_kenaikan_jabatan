@@ -10,7 +10,7 @@
 			<ol class="breadcrumb">
 				<li><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
 				<li><a href="<?php echo base_url('user') ?>"> User</a></li>
-				<li class="active">Edit Data</li>
+				<li class="active">Edit Data User</li>
 			</ol>
 		</section>
 
@@ -21,7 +21,7 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Edit Data</h3>
+							<h3 class="box-title">Edit Data User</h3>
 						</div>
 
 						<!-- /.box-header -->
@@ -30,22 +30,21 @@
 							<div class="box-body">
 								<div class="form-group">
 									<label for="email">Email</label>
-									<input type="text" name="email" class="form-control" id="email" placeholder="Masukkan email" value="<?php echo $user->email; ?>" required>
+									<input type="text" name="email" class="form-control" id="email" placeholder="Masukkan email" value="<?php echo $user->email; ?>" disabled>
 								</div>
-								<div class="form-group">
-								<label for="role_id">Role_id</label>
-									<div class="radio">
-										<label>
-										<input type="radio" name="role_id" id="role_id1" value="0" <?php if ($user->role_id == 0) {echo "checked";} ?> required> Administrator <br>
-                     					<input type="radio" name="role_id" id="role_id1" value="1" <?php if ($user->role_id == 1) {echo "checked";} ?> required> Leader <br>
-                     					<input type="radio" name="role_id" id="role_id1" value="2" <?php if ($user->role_id == 2) {echo "checked";} ?> required> Interviewer <br>
-                      					<input type="radio" name="role_id" id="role_id1" value="3" <?php if ($user->role_id == 3) {echo "checked";} ?> required> director <br>
-                      					<input type="radio" name="role_id" id="role_id1" value="4" <?php if ($user->role_id == 4) {echo "checked";} ?> required> employees
+								<div class="form-group"
+									<?php $this->load->helper('function'); ?>>
+									<label>Role</label>
+									<select class="form-control" name="role">
+										<option value="<?php echo $user->role_id; ?>"><?php echo check_role($user->role_id); ?></option>
+										<option value="0">Administrator</option>
+										<option value="1">Leader</option>
+										<option value="3">Interviewer</option>
+										<option value="4">Direktur</option>
+										<option value="5">Employee</option>
+									</select>
+								</div>
 
-										</label>
-									</div>
-								</div>
-								
 								<!-- /.box-body -->
 
 								<div class="box-footer">

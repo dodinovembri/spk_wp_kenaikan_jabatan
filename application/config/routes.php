@@ -97,7 +97,7 @@ $route['criteria/update/(:any)'] = 'CriteriaController/update/$1';
 $route['criteria/destroy/(:any)'] = 'CriteriaController/destroy/$1';
 
 // routes for criterion value
-$route['criterion_value'] = 'CriterionValueController';
+$route['criterion_value/(:any)'] = 'CriterionValueController/index/$1';
 $route['criterion_value/create'] = 'CriterionValueController/create';
 $route['criterion_value/store'] = 'CriterionValueController/store';
 $route['criterion_value/edit/(:any)'] = 'CriterionValueController/edit/$1';

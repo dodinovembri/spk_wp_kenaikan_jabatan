@@ -15,24 +15,24 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="<?php if ($this->uri->segment(1)=="home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li> 
+            <li class="<?php if ($this->uri->segment(1) == "home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-<!-- /employee-->
+            <!-- /employee-->
 
             <li class="header">TRANSACTIONS</li>
-            <li class="<?php if ($this->uri->segment(1)=="employee")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-user"></i> <span>Pegawai</span></a></li>
-<!-- /rating-->
+            <li class="<?php if ($this->uri->segment(1) == "employee")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
+            <!-- /rating-->
 
             <li><a href="<?php echo base_url('rating') ?>"><i class="fa fa-circle-o"></i> <span>Rating</span></a></li>
 
-<!-- /user-->
-       
+            <!-- /user-->
+
             <li class="header">SETTING CONFIGURATION</li>
-            <li class="<?php if ($this->uri->segment(1)=="user")  echo "active"; ?>"><a href="<?php echo base_url('user') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Users</span></a></li>
+            <li class="<?php if ($this->uri->segment(1) == "user")  echo "active"; ?>"><a href="<?php echo base_url('user') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Users</span></a></li>
 
-<!-- /criteria-->
+            <!-- /criteria-->
 
-            <li class="<?php if ($this->uri->segment(1)=="criteria")  echo "active"; ?>"><a href="<?php echo base_url('criteria') ?>"><i class="fa fa-laptop"></i> <span>Criteria</span></a></li>    
+            <li class="<?php if ($this->uri->segment(1) == "criteria" || $this->uri->segment(1) == "criterion_value")  echo "active"; ?>"><a href="<?php echo base_url('criteria') ?>"><i class="fa fa-laptop"></i> <span>Kriteria</span></a></li>
 
 
         </ul>

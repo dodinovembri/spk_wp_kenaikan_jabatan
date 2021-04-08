@@ -43,6 +43,7 @@
 										<th>NIK</th>
 										<th>Nama</th>
 										<th>Gender</th>
+										<th>Email</th>
 										<th>Lokasi</th>
 										<th>Posisi</th>
 										<th>Aksi</th>
@@ -57,16 +58,16 @@
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value->nik; ?></td>
 											<td><?php echo $value->name; ?></td>
-											<td><?php echo $value->gender; ?></td>
+											<td><?php echo check_gender($value->gender); ?></td>
+											<td><?php echo $value->email ?></td>
 											<td><?php echo $value->location; ?></td>
 											<td><?php echo $value->position; ?></td>
 											<td>
-												<a href="<?php echo base_url('employee/edit/');
-															echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
-												<a data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></a>
+												<a href="<?php echo base_url('employee/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
-										<div class="modal modal-warning fade" id="delete">
+										<div class="modal modal-warning fade" id="delete<?php echo $value->id; ?>">
 											<div class="modal-dialog">
 												<div class="modal-content">
 													<div class="modal-header">

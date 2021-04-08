@@ -10,7 +10,7 @@
 			<ol class="breadcrumb">
 				<li><a href="<?php echo base_url('/'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
 				<li><a href="<?php echo base_url('criteria'); ?>"> Kriteria</a></li>
-				<li class="active">Tambah Data Kriteria</li>
+				<li class="active">Edit Data Kriteria</li>
 			</ol>
 		</section>
 
@@ -21,33 +21,33 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Tambah Data Kriteria</h3>
+							<h3 class="box-title">Edit Data Kriteria</h3>
 						</div>
 
 						<!-- /.box-header -->
 						<!-- form start -->
-						<form role="form" action="<?php echo base_url('criteria/store') ?>" method="post">
+						<form role="form" action="<?php echo base_url('criteria/update/'); echo $criteria->id; ?>" method="post">
 							<div class="box-body">
 								<div class="form-group">
 									<label for="exampleInputCriteriaName">Kode Kriteria</label>
-									<input type="text" name="criteria_code" class="form-control" id="exampleInputCriteriaName" placeholder="Masukkan kode kriteria" required>
+									<input type="text" name="criteria_code" class="form-control" value="<?php echo $criteria->criteria_code; ?>" id="exampleInputCriteriaName" placeholder="Masukkan kode kriteria" required>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputBobot">Nama Kriteria</label>
-									<input type="text" name="criteria_name" class="form-control" id="exampleInputPassword1" placeholder="Masukkan nama kriteria" required>
+									<input type="text" name="criteria_name" class="form-control" value="<?php echo $criteria->criteria_name; ?>" id="exampleInputPassword1" placeholder="Masukkan nama kriteria" required>
 								</div>
 								<div class="form-group">
 									<label for="name">Tipe</label>
 									<div class="radio">
 										<label>
-											<input type="radio" name="criteria_type" id="gender1" value="0" checked required> Cost <br>
-											<input type="radio" name="criteria_type" id="gender1" value="1" required> Benefit
+											<input type="radio" name="criteria_type" id="gender1" value="0"  <?php if ($criteria->criteria_type == 0) {echo "checked";} ?>  required> Cost <br>
+											<input type="radio" name="criteria_type" id="gender1" value="1" <?php if ($criteria->criteria_type == 1) {echo "checked";} ?> required> Benefit
 										</label>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputBobot">Bobot</label>
-									<input type="number" name="criteria_weight" class="form-control" id="exampleInputPassword1" placeholder="Masukkan bobot">
+									<input type="number" name="criteria_weight" class="form-control" value="<?php echo $criteria->criteria_weight; ?>" id="exampleInputPassword1" placeholder="Masukkan bobot">
 								</div>
 								<!-- /.box-body -->
 

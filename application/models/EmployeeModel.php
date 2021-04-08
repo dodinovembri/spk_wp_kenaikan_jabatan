@@ -20,6 +20,13 @@ class EmployeeModel extends CI_Model
         return $this->db->get($this->_table);
     }   
 
+    
+    public function getByExclude($employee_id)
+    {        
+        $this->db->where_not_in('id', $employee_id);
+        return $this->db->get($this->_table);
+    }  
+
     public function update($data, $id)
     {
         $this->db->where('id', $id);
