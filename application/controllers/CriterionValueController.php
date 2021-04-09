@@ -16,7 +16,7 @@ class CriterionValueController extends CI_Controller {
         );
         $this->session->set_userdata($criteria);
 
-        $data['criterion_values'] = $this->CriterionValueModel->getByIds($id)->result();
+        $data['criterion_values'] = $this->CriterionValueModel->getWithBuilder($id)->result();
 
         $this->load->view('templates/header');
 		$this->load->view('criterion_value/index', $data);

@@ -1,13 +1,20 @@
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
+    <?php 
+        $CI =& get_instance();
+        $CI->load->model(['UserModel', 'EmployeeModel']);
+        $user_id = $this->session->userdata('id');
+        $user = $CI->UserModel->getById($user_id)->row();
+        $employee = $CI->EmployeeModel->getById($user->employee_id)->row(); 
+    ?>
     <section class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?php echo base_url('uploads/employee/'); echo $this->session->userdata('image') ?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url('uploads/employee/'); echo $employee->image; ?>" class="img-circle" alt="User Image" style="margin-bottom: 20px;"> 
             </div>
             <div class="pull-left info">
-                <p><?php echo $this->session->userdata('name') ?></p>
+                <p><?php echo $employee->name; ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>

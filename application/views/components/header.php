@@ -7,7 +7,13 @@
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><b>Semen</b> BatuRaja</span>
 </a>
-
+<?php 
+    $CI =& get_instance();
+    $CI->load->model(['UserModel', 'EmployeeModel']);
+    $user_id = $this->session->userdata('id');
+    $user = $CI->UserModel->getById($user_id)->row();
+    $employee = $CI->EmployeeModel->getById($user->employee_id)->row(); 
+?>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
@@ -20,16 +26,16 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="<?php echo base_url('uploads/employee/'); echo $this->session->userdata('image') ?>" class="user-image" alt="User Image">
-                    <span class="hidden-xs"><?php echo $this->session->userdata('name'); ?></span>
+                    <img src="<?php echo base_url('uploads/employee/'); echo $employee->image; ?>" class="user-image" alt="User Image">
+                    <span class="hidden-xs"><?php echo $employee->name; ?></span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                        <img src="<?php echo base_url('uploads/employee/'); echo $this->session->userdata('image'); ?>" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url('uploads/employee/'); echo $employee->image; ?>" class="img-circle" alt="User Image">
 
                         <p>
-                            <?php echo $this->session->userdata('name') ?>
+                            <?php echo $employee->name; ?>
                             <small><?php echo $this->session->userdata('role_name') ?></small>
                         </p>
                     </li>

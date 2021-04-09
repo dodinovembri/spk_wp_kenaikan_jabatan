@@ -53,9 +53,9 @@
 										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><?php echo $value->employee_id; ?></td>
-											<td><?php echo $value->criteria_id; ?></td>
-											<td><?php echo $value->criterion_value_id; ?></td>
+											<td><?php echo $value->nik; ?></td>
+											<td><?php echo $value->criteria_code; ?></td>
+											<td><?php echo $value->information; ?></td>
 											<td>
 												<a href="<?php echo base_url('rating/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>

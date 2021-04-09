@@ -53,7 +53,7 @@
 										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><?php echo $value->criteria_id; ?></td>
+											<td><?php echo $value->criteria_code; ?></td>
 											<td><?php echo $value->information; ?></td>
 											<td><?php echo $value->score; ?></td>
 											<td>

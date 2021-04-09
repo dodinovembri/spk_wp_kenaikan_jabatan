@@ -16,7 +16,7 @@ class RatingController extends CI_Controller {
         );
         $this->session->set_userdata($employee);
 
-        $data['employee_ratings'] = $this->RatingModel->getByIds($id)->result();
+        $data['employee_ratings'] = $this->RatingModel->getWithBuilder($id)->result();
 
         $this->load->view('templates/header');
 		$this->load->view('rating/index', $data);

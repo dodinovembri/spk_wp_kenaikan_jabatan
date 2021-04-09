@@ -9,6 +9,11 @@ class RatingModel extends CI_Model
     	return $this->db->get($this->_table);
     }
 
+    public function getWithBuilder($id)
+    {
+        return $this->db->query("SELECT rating.*, employee.nik AS nik, criterion_value.information AS information, criteria.criteria_code AS criteria_code FROM rating JOIN employee ON rating.employee_id = employee.id JOIN criteria ON rating.criteria_id = criteria.id JOIN criterion_value ON rating.criterion_value_id = criterion_value.id WHERE rating.employee_id = $id");
+    }
+
     public function insert($data)
     {
         return $this->db->insert($this->_table, $data);

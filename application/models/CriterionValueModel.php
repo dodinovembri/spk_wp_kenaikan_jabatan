@@ -9,6 +9,11 @@ class CriterionValueModel extends CI_Model
     	return $this->db->get($this->_table);
     }
 
+    public function getWithBuilder($id)
+    {
+        return $this->db->query("SELECT criterion_value.*, criteria.criteria_code AS criteria_code FROM criterion_value JOIN criteria ON criterion_value.criteria_id = criteria.id WHERE criterion_value.criteria_id = $id");
+    }
+
     public function insert($data)
     {
         return $this->db->insert($this->_table, $data);

@@ -1,3 +1,1 @@
-5. query join di rating employee
-6. query table di nilai kriteria
 7. sidebar menu untuk semua akses login
