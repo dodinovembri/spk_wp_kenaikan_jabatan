@@ -6,7 +6,7 @@ class RatingController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['RatingModel', 'CriteriaModel', 'CriterionValueModel']);
+        $this->load->model(['RatingModel', 'CriteriaModel', 'CriterionValueModel', 'EmployeeModel']);
     }
 
 	public function index($id)
@@ -70,6 +70,8 @@ class RatingController extends CI_Controller {
         $rating = $this->RatingModel->getById($id)->row();
         $data['criterion_values'] = $this->CriterionValueModel->getByIds($rating->criteria_id)->result();
         $data['rating'] = $this->RatingModel->getById($id)->row();
+        $data['employee'] = $this->EmployeeModel->getById($rating->employee_id)->row();
+        $data['criteria'] = $this->CriteriaModel->getById($rating->criteria_id)->row();
 
         $this->load->view('templates/header');
         $this->load->view('rating/edit', $data);

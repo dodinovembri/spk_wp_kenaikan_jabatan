@@ -30,6 +30,14 @@
 						<!-- form start -->
 						<form role="form" action="<?php echo base_url('rating/update/'); echo $rating->id; ?>" method="post">
 							<div class="box-body">
+								<div class="form-group">
+									<label for="name">Pegawai</label>
+									<input type="text" value="<?php echo $employee->nik; ?>" class="form-control" readonly>
+								</div>
+								<div class="form-group">
+									<label for="name">Kriteria</label>
+									<input type="text" value="<?php echo $criteria->criteria_code; ?>" class="form-control" readonly>
+								</div>
 								<?php foreach ($criterion_values as $key => $value) { ?>
 									<div class="form-group">
 										<label for="exampleInputCriteriaName">Score</label>
