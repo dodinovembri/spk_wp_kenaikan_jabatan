@@ -16,48 +16,18 @@ class RankingController extends CI_Controller {
 
 	public function index()
 	{
+        // call all related function to helper
         $weight_fixes = weight_fixes();
+        $total_weight_fixes = count($weight_fixes);
         $s_vector = s_vector($weight_fixes);
+        $s_vector_total = s_vector_total($s_vector, $total_weight_fixes);
+        $sum_s_vector_total = sum_s_vector_total($s_vector_total);
 
-        // $this->output->delete_cache();
-                
-        // $btn_submit = $this->input->post('btn_submit');
-        // $total_criteria = $this->CriteriaModel->get_total();
-        // $total_importance_scale = $this->HelperModel->get_total();
-        // $total_importance_scale = (int)$total_importance_scale->total;
+        $data['v_vector'] = v_vector($s_vector_total, $sum_s_vector_total);
 
-        // if ($total_criteria == $total_importance_scale) {
-        //     // weight fixes
-        //     $weight_fixes = weight_fixes();
-        //     $total_weight_fixes = count($weight_fixes);
-            
-        //     if (isset($btn_submit)) {
-        //         $latitude_form = $this->input->post('latitude');
-        //         $latitude = floatval($latitude_form);
-        //         $longitude_form = $this->input->post('longitude');
-        //         $longitude = floatval($longitude_form);
-
-        //         // determine the s vector
-        //         $s_vector = s_vector($weight_fixes, $latitude, $longitude);
-        //     }else{
-        //         // determine the s vector
-        //         $s_vector = s_vector($weight_fixes);
-        //     }
-
-        //     // determine the s vector
-        //     $s_vector_total = s_vector_total($s_vector, $total_weight_fixes);
-        //     $sum_s_vector_total = sum_s_vector_total($s_vector_total);
-
-        //     // determine the v vector
-        //     $data['v_vector'] = v_vector($s_vector_total, $sum_s_vector_total);
-        // }
-        
-        // $data['total_weight_fixes'] = $total_importance_scale;        
-        // $data['total_criteria'] = $total_criteria;
-
-        // $this->load->view('templates/backend/header');
-		// $this->load->view('ranking/index', $data);
-        // $this->load->view('templates/backend/footer');
+        $this->load->view('templates/header');
+		$this->load->view('ranking/index', $data);
+        $this->load->view('templates/footer');
 	}
 
     public function create()
