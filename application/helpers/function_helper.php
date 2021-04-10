@@ -37,6 +37,46 @@
                 return "Benefit";
             }
         }
-    }      
+    } 
 
+    // start to calculate weighted product
+
+    if ( ! function_exists('weight_fixes')){
+        function weight_fixes(){
+            $CI = get_instance();
+            $CI->load->model('HelperModel');
+
+            $sum_criteria_weight = $CI->HelperModel->sum_criteria_weight()->row();
+            $criterias = $CI->HelperModel->criterias()->result();
+
+            // $weight_fixed = 0;
+            $weight_fixes = [];
+            foreach ($criterias as $key => $value) {
+                $each_weight_fixes = $value->criteria_weight / $sum_criteria_weight->sum_criteria_weight;
+                array_push($weight_fixes, $each_weight_fixes);
+                // $weight_fixed = $weight_fixed + $each_weight_fixes;
+            }
+            return $weight_fixes;
+        }
+    }         
+
+    if ( ! function_exists('s_vector')){
+        function s_vector($weight_fixes){
+            $CI = get_instance();
+            $CI->load->model('HelperModel');
+
+            $employees = $CI->HelperModel->getWithJoin()->result();     
+            var_dump($employees);
+            die;
+
+            // $weight_fixed = 0;
+            $weight_fixes = [];
+            foreach ($criterias as $key => $value) {
+                $each_weight_fixes = $value->criteria_weight / $sum_criteria_weight->sum_criteria_weight;
+                array_push($weight_fixes, $each_weight_fixes);
+                // $weight_fixed = $weight_fixed + $each_weight_fixes;
+            }
+            return $weight_fixes;
+        }
+    }
 ?>

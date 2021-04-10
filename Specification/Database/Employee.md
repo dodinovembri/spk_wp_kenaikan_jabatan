@@ -11,6 +11,7 @@ CREATE TABLE employee (
 	image VARCHAR(50) NULL,
 	location TEXT NULL,
 	position VARCHAR(255) NULL,
+	type TINYINT DEFAULT 4,
    	created_at TIMESTAMP NULL,
 	updated_at TIMESTAMP NULL,
    	created_by INT NULL,

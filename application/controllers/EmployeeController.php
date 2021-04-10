@@ -12,7 +12,7 @@ class EmployeeController extends CI_Controller
 
     public function index()
     {
-        $data['employees'] = $this->EmployeeModel->get()->result();
+        $data['employees'] = $this->EmployeeModel->getByType()->result();
 
         $this->load->view('templates/header');
         $this->load->view('employee/index', $data);
