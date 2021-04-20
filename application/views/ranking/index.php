@@ -54,7 +54,7 @@
 							<table id="example5" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th width="10px">Ranking</th>
+										<th width="10px">No</th>
 										<th>NIK</th>
 										<th>Nama</th>
 										<th>Gender</th>
@@ -95,7 +95,7 @@
 							<table id="example3" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th width="10px">Ranking</th>
+										<th width="10px">No</th>
 										<th>NIK</th>
 										<th>Nama</th>
 										<th>Gender</th>
