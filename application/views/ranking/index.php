@@ -51,7 +51,7 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<table id="example1" class="table table-bordered table-striped">
+							<table id="example5" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th width="10px">Ranking</th>
@@ -92,7 +92,7 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<table id="example1" class="table table-bordered table-striped">
+							<table id="example3" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th width="10px">Ranking</th>
@@ -133,7 +133,7 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<table id="example1" class="table table-bordered table-striped">
+							<table id="example4" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th width="10px">Ranking</th>
