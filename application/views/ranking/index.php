@@ -133,6 +133,9 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
+						<button type="button" data-toggle="modal" data-target="#saveRanking" class="btn btn-block btn-primary" style="width: 18%;">Simpan Hasil/ Promosikan</button>
+						
+						<br>
 							<table id="example4" class="table table-bordered table-striped">
 								<thead>
 									<tr>
@@ -164,6 +167,34 @@
 										</tr>
 									<?php } ?>
 							</table>
+						</div>
+						<div class="modal modal-primary fade" id="saveRanking">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title">Simpan Hasil Ranking</h4>
+									</div>
+									<div class="modal-body">
+										<form role="form" action="<?php echo base_url('ranking/store') ?>" method="post">
+											<div class="box-body">
+												<div class="form-group">
+													<label for="exampleInputCriteriaName">Tanggal Promosi</label>
+													<input type="text" name="date_of_promotion" value="<?php echo date('d-m-Y') ?>" class="form-control" id="exampleInputCriteriaName" placeholder="Masukkan tolak ukur" readonly>
+												</div>
+												<!-- /.box-body -->
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
+										</form>
+										<button type="submit" class="btn btn-outline">Simpan Ranking</button></a>
+
+									</div>
+								</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
 						</div>
 						<!-- /.box-body -->
 					</div>

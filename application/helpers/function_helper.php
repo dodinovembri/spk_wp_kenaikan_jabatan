@@ -115,7 +115,7 @@
                     $i = 0;
                 }
             }       
-            $data = $array;      
+            $data = $array;  
             return $data;
         }
     } 
