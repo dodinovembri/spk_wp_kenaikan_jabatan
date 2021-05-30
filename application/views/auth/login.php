@@ -5,8 +5,16 @@
 	<!-- /.login-logo -->
 	<div class="login-box-body">
 		<p class="login-box-msg">Sign in to start your session</p>
-
-
+		<?php if ($this->session->flashdata('success')) { ?>
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<?php echo $this->session->flashdata('success'); $this->session->unset_userdata('success'); ?>
+			</div>
+		<?php } elseif ($this->session->flashdata('warning')) { ?>
+			<div class="alert alert-warning" role="alert">
+				<?php echo $this->session->flashdata('warning'); $this->session->unset_userdata('warning'); ?>
+			</div>
+		<?php } ?>
 		<form action="<?php echo base_url('auth/login'); ?>" method="POST">
 			<div class="form-group has-feedback">
 				<input type="email" name="username" class="form-control" placeholder="Email">

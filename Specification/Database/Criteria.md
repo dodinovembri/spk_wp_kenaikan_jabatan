@@ -7,7 +7,7 @@ CREATE TABLE criteria (
 	criteria_code VARCHAR(100) NULL,
 	criteria_name VARCHAR(255) NULL,
 	criteria_type VARCHAR(50) NULL,
-	criteria_weight INT NULL,
+	criteria_weight DOUBLE(18, 2) NULL,
    	created_at TIMESTAMP NULL,
 	updated_at TIMESTAMP NULL,
    	created_by INT NULL,

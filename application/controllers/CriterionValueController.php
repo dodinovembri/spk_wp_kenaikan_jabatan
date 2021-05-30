@@ -37,6 +37,7 @@ class CriterionValueController extends CI_Controller {
             'criteria_id' => $criteria_id,
             'information' => $this->input->post('information'),
             'score' => $this->input->post('score'),
+            'benchmark' => $this->input->post('benchmark'),
             'created_at'      => date("Y-m-d H-i-s"),
             'created_by'      => $this->session->userdata('id')
         );
@@ -67,6 +68,7 @@ class CriterionValueController extends CI_Controller {
         $data = array(
             'information' => $this->input->post('information'),
             'score' => $this->input->post('score'),
+            'benchmark' => $this->input->post('benchmark'),
             'updated_at'      => date("Y-m-d H-i-s"),
             'updated_by'      => $this->session->userdata('id')
         );

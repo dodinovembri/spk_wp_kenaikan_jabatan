@@ -42,6 +42,7 @@
 									<tr>
 										<th>No</th>
 										<th>Kriteria</th>
+										<th>Tolak Ukur</th>
 										<th>Deskripsi</th>
 										<th>Nilai</th>
 										<th>Aksi</th>
@@ -54,6 +55,7 @@
 										<tr>
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value->criteria_code; ?></td>
+											<td><?php echo $value->benchmark; ?></td>
 											<td><?php echo $value->information; ?></td>
 											<td><?php echo $value->score; ?></td>
 											<td>

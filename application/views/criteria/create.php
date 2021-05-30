@@ -47,7 +47,7 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleInputBobot">Bobot</label>
-									<input type="number" name="criteria_weight" class="form-control" id="exampleInputPassword1" placeholder="Masukkan bobot">
+									<input type="text" name="criteria_weight" class="form-control" id="exampleInputPassword1" placeholder="Ex. 16.67">
 								</div>
 								<!-- /.box-body -->
 

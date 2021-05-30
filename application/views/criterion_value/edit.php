@@ -30,6 +30,10 @@
 						<form role="form" action="<?php echo base_url('criterion_value/update/'); echo $criterion_value->id; ?>" method="post">
 							<div class="box-body">
 								<div class="form-group">
+									<label for="exampleInputCriteriaName">Tolak Ukur</label>
+									<input type="text" name="benchmark" value="<?php echo $criterion_value->benchmark; ?>" class="form-control" id="exampleInputCriteriaName" placeholder="Masukkan tolak ukur" required>
+								</div>
+								<div class="form-group">
 									<label for="exampleInputCriteriaName">Deskripsi</label>
 									<input type="text" name="information" value="<?php echo $criterion_value->information; ?>" class="form-control" id="exampleInputCriteriaName" placeholder="Masukkan nama nilai kriteria" required>
 								</div>
