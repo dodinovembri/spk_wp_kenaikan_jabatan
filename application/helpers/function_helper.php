@@ -95,27 +95,45 @@
         function s_vector_total($s_vector, $total_weight_fixes){ 
             $alternative_id = 0;
             $i = 0;
-            $max = $total_weight_fixes;
+            $max = $total_weight_fixes;            
             $pushed = [];
+            $temp_s_vector_without_multiple = 0; 
+
             foreach ($s_vector as $key => $value) {
                 $employee_id = $value['employee_id'];
 
                 if ($i == 0) {
-                    $temp_s_vector = $value['s_vector'];                
+                    $temp_s_vector = $value['s_vector']; 
+
                 }else{
-                    if ($value['employee_id'] == $employee_id) {
-                        $temp_s_vector = $temp_s_vector * $value['s_vector']; 
+                    if ($i <= 5) {                        
+                        if ($value['employee_id'] == $employee_id) {
+                            $temp_s_vector = $temp_s_vector * $value['s_vector']; 
+                        }
                     }
+                    if ($i == 5) {
+                        $temp_s_vector = $temp_s_vector * 30/100;
+                    }elseif ($i > 5 && $i <= 8){
+                        if ($i == 6) {
+                            $temp_s_vector_without_multiple = $value['s_vector'];                            
+                        }else{
+                            $temp_s_vector_without_multiple = $temp_s_vector_without_multiple * $value['s_vector']; 
+                        }
+                    }                    
                 }
     
                 $i++;
                 if ($i == $max) {
+                    $temp_s_vector = $temp_s_vector + $temp_s_vector_without_multiple;
+
                     $array[] = array('employee_id' => $employee_id, 'total_s_vector' => $temp_s_vector);
                     array_push($pushed, $array);
                     $i = 0;
+                    $temp_s_vector_without_multiple = 0;
                 }
             }       
             $data = $array;  
+
             return $data;
         }
     } 
