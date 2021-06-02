@@ -24,7 +24,9 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('employee/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
+							<?php if ($this->session->userdata('role_id') == 0) { ?>
+								<a href="<?php echo base_url('employee/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
+							<?php } ?>
 							<br>
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success alert-dismissible" role="alert">

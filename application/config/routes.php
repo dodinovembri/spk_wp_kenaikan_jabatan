@@ -122,3 +122,12 @@ $route['profile/store_pw/(:any)'] = 'ProfileController/store_pw/$1';
 $route['profile/edit/(:any)'] = 'ProfileController/edit/$1';
 $route['profile/update/(:any)'] = 'ProfileController/update/$1';
 $route['profile/destroy/(:any)'] = 'ProfileController/destroy/$1';
+
+// routes for report
+$route['report'] = 'ReportController';
+$route['report/create'] = 'ReportController/create';
+$route['report/store/(:any)'] = 'ReportController/store/$1';
+$route['report/store_pw/(:any)'] = 'ReportController/store_pw/$1';
+$route['report/edit/(:any)'] = 'ReportController/edit/$1';
+$route['report/update/(:any)'] = 'ReportController/update/$1';
+$route['report/destroy/(:any)'] = 'ReportController/destroy/$1';

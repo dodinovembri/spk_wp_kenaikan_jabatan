@@ -21,3 +21,4 @@ CREATE TABLE result (
 | 1 | Active/ Accepted |
 | 2 | Draft |
 | 3 | Rejected |
+| 4 | Not Latest |

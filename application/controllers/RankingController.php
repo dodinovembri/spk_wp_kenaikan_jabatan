@@ -85,6 +85,9 @@ class RankingController extends CI_Controller {
 
         $date_of_promotion = $this->input->post('date_of_promotion');
         $i = 1;
+
+        $this->ResultModel->updateStatus();
+
         foreach ($result as $key => $value) { 
             $data = array(                
                 'date_of_promotion' => $date_of_promotion,

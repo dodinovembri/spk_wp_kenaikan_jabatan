@@ -9,6 +9,12 @@ class ResultModel extends CI_Model
     	return $this->db->get($this->_table);
     }
 
+    public function getWhere()
+    {
+        $this->db->where('status', 2);
+    	return $this->db->get($this->_table);
+    }    
+
     public function insert($data)
     {
         return $this->db->insert($this->_table, $data);
@@ -32,4 +38,9 @@ class ResultModel extends CI_Model
         return $this->db->delete($this->_table);
     }      
 
+    public function updateStatus()
+    {
+        $this->db->set('status', 4);
+        $this->db->update($this->_table);
+    }
 }

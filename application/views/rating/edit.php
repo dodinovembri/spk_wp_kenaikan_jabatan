@@ -38,15 +38,19 @@
 									<label for="name">Kriteria</label>
 									<input type="text" value="<?php echo $criteria->criteria_code; ?>" class="form-control" readonly>
 								</div>
-								<?php foreach ($criterion_values as $key => $value) { ?>
+								<div class="form-group">
+									<label for="name">Nama Kriteria</label>
+									<input type="text" value="<?php echo $criteria->criteria_name; ?>" class="form-control" readonly>
+								</div>
 									<div class="form-group">
 										<label for="exampleInputCriteriaName">Score</label>
 										<select class="form-control" name="criterion_value_id" required="">
 											<option value="">Pilih</option>
+											<?php foreach ($criterion_values as $key => $value) { ?>
 												<option value="<?php echo $value->id; ?>"><?php echo $value->information; ?></option>
+											<?php } ?>
 										</select>
 									</div>
-								<?php } ?>
 								<!-- /.box-body -->
 
 								<div class="box-footer">
