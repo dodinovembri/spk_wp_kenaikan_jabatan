@@ -52,6 +52,8 @@ class EmployeeModel extends CI_Model
     
     public function count()
     {
-        return $this->db->count_all($this->_table);
+        $this->db->where('type', 4);
+        $this->db->from("employee");
+        return $this->db->count_all_results();
     }
 }
