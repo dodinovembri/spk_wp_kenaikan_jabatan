@@ -17,8 +17,8 @@ CREATE TABLE result (
 ## Status
 | Code | Name |
 | ---- | ---- |
-| 0 | Inactive
-| 1 | Active/ Accepted |
+| 0 | Inactive |
+| 1 | Active/ Accepted/ Promoted |
 | 2 | Draft |
 | 3 | Rejected |
 | 4 | Not Latest |

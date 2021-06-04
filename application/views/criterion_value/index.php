@@ -25,8 +25,10 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('criterion_value/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
-							<br>
+							<?php if ($this->session->userdata('role_id') != 3) { ?>
+								<a href="<?php echo base_url('criterion_value/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
+								<br>
+							<?php } ?>
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success alert-dismissible" role="alert">
 									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -45,7 +47,9 @@
 										<th>Tolak Ukur</th>
 										<th>Deskripsi</th>
 										<th>Nilai</th>
-										<th>Aksi</th>
+										<?php if ($this->session->userdata('role_id') != 3) { ?>
+											<th>Aksi</th>
+										<?php } ?>
 									</tr>
 								</thead>
 								<tbody>
@@ -58,10 +62,12 @@
 											<td><?php echo $value->benchmark; ?></td>
 											<td><?php echo $value->information; ?></td>
 											<td><?php echo $value->score; ?></td>
+											<?php if ($this->session->userdata('role_id') != 3) { ?>
 											<td>
 												<a href="<?php echo base_url('criterion_value/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
+											<?php } ?>
 										</tr>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->id; ?>">
 											<div class="modal-dialog">

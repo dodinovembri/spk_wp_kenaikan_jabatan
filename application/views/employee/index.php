@@ -48,7 +48,9 @@
 										<th>Email</th>
 										<th>Lokasi</th>
 										<th>Posisi</th>
-										<th>Aksi</th>
+										<?php if ($this->session->userdata('role_id') == 0) { ?>
+											<th>Aksi</th>
+										<?php } ?>
 									</tr>
 								</thead>
 								<tbody>
@@ -64,10 +66,12 @@
 											<td><?php echo $value->email ?></td>
 											<td><?php echo $value->location; ?></td>
 											<td><?php echo $value->position; ?></td>
-											<td>
+											<?php if ($this->session->userdata('role_id') == 0) { ?>
+												<td>
 												<a href="<?php echo base_url('employee/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
-												<a data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
-											</td>
+													<a data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
+												</td>
+											<?php } ?>
 										</tr>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->id; ?>">
 											<div class="modal-dialog">

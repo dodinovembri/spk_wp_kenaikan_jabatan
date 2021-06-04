@@ -36,14 +36,16 @@ class RatingController extends CI_Controller {
     {
         $employee_id = $this->session->userdata('employee_id');
         $criteria_criterion = $this->input->post('criteria_criterion');
-        $this->RatingModel->destroyAllById($employee_id);
-
+        // $this->RatingModel->destroyAllById($employee_id);
+        
         foreach ($criteria_criterion as $key => $value) {
             $data = explode("&", $value);
-
+            
             $employee_id = $this->session->userdata('employee_id');
             $criteria_id = $data[0];
             $criterion_value_id = $data[1];
+
+            $this->RatingModel->destroyAllByCriteria($criteria_id, $employee_id);
 
             $data = array(
                 'employee_id' => $employee_id,

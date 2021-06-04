@@ -133,7 +133,9 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-						<button type="button" data-toggle="modal" data-target="#saveRanking" class="btn btn-block btn-primary" style="width: 18%;">Simpan Hasil/ Promosikan</button>
+						<?php if ($this->session->userdata('role_id') == 0) { ?>
+							<button type="button" data-toggle="modal" data-target="#saveRanking" class="btn btn-block btn-primary" style="width: 20%;"><i class="fa fa-save"> </i>&nbsp; Simpan Hasil/ Promosikan</button>
+						<?php } ?>
 						
 						<br>
 							<table id="example4" class="table table-bordered table-striped">

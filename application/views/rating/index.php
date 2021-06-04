@@ -25,8 +25,10 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('rating/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
-							<br>
+							<?php if ($this->session->userdata('role_id') != 3) { ?>
+								<a href="<?php echo base_url('rating/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 18%;"><i class="fa fa-refresh"> </i> &nbsp; Reset & Tambah Baru</button></a>
+								<br>
+							<?php } ?>
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success alert-dismissible" role="alert">
 									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -45,24 +47,58 @@
 										<th>Kriteria</th>
 										<th>Nama Kriteria</th>
 										<th>Deskripsi</th>
-										<th>Aksi</th>
+										<?php if ($this->session->userdata('role_id') != 3) { ?>
+											<th>Aksi</th>
+										<?php } ?>
 									</tr>
 								</thead>
 								<tbody>
 									<?php $no = 0;
 									foreach ($employee_ratings as $key => $value) {
-										$no++; ?>
-										<tr>
-											<td><?php echo $no; ?></td>
-											<td><?php echo $value->nik; ?></td>
-											<td><?php echo $value->criteria_code; ?></td>
-											<td><?php echo $value->criteria_name; ?></td>
-											<td><?php echo $value->information; ?></td>
-											<td>
-												<a href="<?php echo base_url('rating/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
-												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
-											</td>
-										</tr>
+										$no++;
+										if ($this->session->userdata('role_id') == 0) {
+											if ($value->criteria_code == 'C7') { ?>
+												<tr>
+													<td><?php echo $no; ?></td>
+													<td><?php echo $value->nik; ?></td>
+													<td><?php echo $value->criteria_code; ?></td>
+													<td><?php echo $value->criteria_name; ?></td>
+													<td><?php echo $value->information; ?></td>
+													<td>
+														<a href="<?php echo base_url('rating/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+														<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
+													</td>
+												</tr>
+											<?php }
+										}elseif ($this->session->userdata('role_id') == 1) {
+											if ($value->criteria_code == 'C9') { ?>
+												<tr>
+													<td><?php echo $no; ?></td>
+													<td><?php echo $value->nik; ?></td>
+													<td><?php echo $value->criteria_code; ?></td>
+													<td><?php echo $value->criteria_name; ?></td>
+													<td><?php echo $value->information; ?></td>
+													<td>
+														<a href="<?php echo base_url('rating/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+														<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
+													</td>
+												</tr>
+											<?php }
+										}elseif ($this->session->userdata('role_id') == 2) {
+											if ($value->criteria_code == 'C1' || $value->criteria_code == 'C2' || $value->criteria_code == 'C3' || $value->criteria_code == 'C4' || $value->criteria_code == 'C5' || $value->criteria_code == 'C6' || $value->criteria_code == 'C8') { ?>
+												<tr>
+													<td><?php echo $no; ?></td>
+													<td><?php echo $value->nik; ?></td>
+													<td><?php echo $value->criteria_code; ?></td>
+													<td><?php echo $value->criteria_name; ?></td>
+													<td><?php echo $value->information; ?></td>
+													<td>
+														<a href="<?php echo base_url('rating/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+														<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
+													</td>
+												</tr>
+											<?php }
+										} ?>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->id; ?>">
 											<div class="modal-dialog">
 												<div class="modal-content">

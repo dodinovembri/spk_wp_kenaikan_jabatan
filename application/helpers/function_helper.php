@@ -43,6 +43,23 @@
         }
     } 
 
+    if (!function_exists('check_report_status')) {
+        function check_report_status($report_status)
+        {
+            if ($report_status == 0) {
+                return "Tidak Aktif";
+            }elseif ($report_status == 1) {
+                return "Dipromosikan";
+            }elseif ($report_status == 2) {
+                return "Draft";
+            }elseif ($report_status == 3) {
+                return "Ditolak";
+            }elseif ($report_status == 4) {
+                return "Tidak Terbaru";
+            }
+        }
+    }     
+
     /**
      * below function for calculate weighted product
      */

@@ -131,3 +131,12 @@ $route['report/store_pw/(:any)'] = 'ReportController/store_pw/$1';
 $route['report/edit/(:any)'] = 'ReportController/edit/$1';
 $route['report/update/(:any)'] = 'ReportController/update/$1';
 $route['report/destroy/(:any)'] = 'ReportController/destroy/$1';
+
+// routes for employee report
+$route['employee_report'] = 'EmployeeReportController';
+$route['employee_report/create'] = 'EmployeeReportController/create';
+$route['employee_report/store/(:any)'] = 'EmployeeReportController/store/$1';
+$route['employee_report/store_pw/(:any)'] = 'EmployeeReportController/store_pw/$1';
+$route['employee_report/edit/(:any)'] = 'EmployeeReportController/edit/$1';
+$route['employee_report/update/(:any)'] = 'EmployeeReportController/update/$1';
+$route['employee_report/destroy/(:any)'] = 'EmployeeReportController/destroy/$1';
