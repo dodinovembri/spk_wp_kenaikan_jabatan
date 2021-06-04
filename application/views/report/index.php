@@ -60,7 +60,6 @@
 
 	</div>
 	<!-- /.content-wrapper -->
-
 	<?php $this->load->view('components/footer'); ?>
 
 </div>
