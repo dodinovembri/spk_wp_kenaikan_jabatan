@@ -12,7 +12,7 @@ class ReportController extends CI_Controller {
 	public function index()
 	{
         $data['reports'] = $this->ResultModel->getWithJoin()->result();
-
+        
         $this->load->view('templates/header');
         $this->load->view('report/index', $data);
         $this->load->view('templates/footer');
@@ -53,7 +53,7 @@ class ReportController extends CI_Controller {
         );
 
         $employee_data = array(
-            'position' => $new_position,
+            'new_position' => $new_position,
             'updated_at'      => date("Y-m-d H-i-s"),
             'updated_by'      => $this->session->userdata('id')
         );

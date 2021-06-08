@@ -30,6 +30,7 @@
 										<th>Employee Id</th>
 										<th>Ranking</th>
 										<th>Status</th>	
+										<th>Posisi Baru</th>	
 										<th>Actions</th>									
 									</tr>
 								</thead>
@@ -39,8 +40,9 @@
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value->date_of_promotion; ?></td>
 											<td><?php echo $value->name; ?></td>
-											<td><?php echo $value->ranking;; ?></td>
+											<td><?php echo $value->ranking; ?></td>
 											<td><?php echo check_report_status($value->status) ?></td>
+											<td><?php echo $value->new_position; ?></td>
 											<td>
 											<a href="<?php echo base_url('report/edit/'); echo $value->result_id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 											</td>

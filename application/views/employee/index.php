@@ -48,6 +48,7 @@
 										<th>Email</th>
 										<th>Lokasi</th>
 										<th>Posisi</th>
+										<th>Posisi Baru</th>
 										<?php if ($this->session->userdata('role_id') == 0) { ?>
 											<th>Aksi</th>
 										<?php } ?>
@@ -60,12 +61,19 @@
 										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><a href="<?php echo base_url('ratings/'); echo $value->id; ?>"><b><?php echo $value->nik; ?></b></a></td>
+											<td>
+											<?php if ($this->session->userdata('role_id') != 3) { ?>
+												<a href="<?php echo base_url('ratings/'); echo $value->id; ?>"><b><?php echo $value->nik; ?></b></a>
+											<?php }else{ ?>
+												<?php echo $value->nik; ?>
+											<?php } ?>
+											</td>
 											<td><?php echo $value->name; ?></td>
 											<td><?php echo check_gender($value->gender); ?></td>
 											<td><?php echo $value->email ?></td>
 											<td><?php echo $value->location; ?></td>
 											<td><?php echo $value->position; ?></td>
+											<td><?php echo $value->new_position; ?></td>
 											<?php if ($this->session->userdata('role_id') == 0) { ?>
 												<td>
 												<a href="<?php echo base_url('employee/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>

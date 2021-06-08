@@ -30,6 +30,7 @@
 										<th>Employee Id</th>
 										<th>Ranking</th>
 										<th>Status</th>	
+										<th>Posisi Baru</th>	
 									</tr>
 								</thead>
 								<tbody>
@@ -40,6 +41,7 @@
 											<td><?php echo $value->name; ?></td>
 											<td><?php echo $value->ranking;; ?></td>
 											<td><?php echo check_report_status($value->status) ?></td>
+											<td><?php echo $value->new_position;; ?></td>
 										</tr>
 									<?php } ?>
 							</table>

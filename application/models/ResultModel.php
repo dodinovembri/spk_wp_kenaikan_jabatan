@@ -28,8 +28,7 @@ class ResultModel extends CI_Model
 
     public function getWithJoin()
     {
-        $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name');
-        $this->db->where('status', 2);
+        $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name, employee.new_position as new_position');
         $this->db->join('employee', 'result.employee_id = employee.id');
         $this->db->from($this->_table);
         return $this->db->get();             
@@ -37,8 +36,8 @@ class ResultModel extends CI_Model
 
     public function getWithJoinEmployeeReport()
     {
-        $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name');
-        $this->db->where('status', 1);
+        $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name, employee.new_position as new_position');
+        // $this->db->where('status', 1);
         $this->db->join('employee', 'result.employee_id = employee.id');
         $this->db->from($this->_table);
         return $this->db->get();             
@@ -48,7 +47,7 @@ class ResultModel extends CI_Model
     public function getWithJoinById($id)
     {
         $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name');
-        $this->db->where('status', 2);
+        // $this->db->where('status', 2);
         $this->db->where('result.id', $id);
         $this->db->join('employee', 'result.employee_id = employee.id');
         $this->db->from($this->_table);
