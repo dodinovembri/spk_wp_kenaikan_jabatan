@@ -47,9 +47,11 @@ class ReportController extends CI_Controller {
         $result_id = $this->ResultModel->getById($id)->row();
         $employee = $this->EmployeeModel->getById($result_id->employee_id)->row();        
         $new_position = $this->input->post('new_position');
-
+        $status = $this->input->post('status');
+        $status = $status == 4 ? $status : "1";
+        
         $result_data = array(
-            'status' => 1
+            'status' => $status
         );
 
         $employee_data = array(

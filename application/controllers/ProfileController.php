@@ -44,7 +44,7 @@ class ProfileController extends CI_Controller
                 'gender'     => $this->input->post('gender'),
                 'image'      => $this->upload->data('file_name'),
                 'location'   => $this->input->post('location'),
-                'position'   => $this->input->post('position'),
+                // 'position'   => $this->input->post('position'),
                 'updated_at' => date("Y-m-d H-i-s"),
                 'updated_by' => $this->session->userdata('id')
             );
@@ -60,7 +60,7 @@ class ProfileController extends CI_Controller
                 'nik'        => $this->input->post('nik'),
                 'gender'     => $this->input->post('gender'),
                 'location'   => $this->input->post('location'),
-                'position'   => $this->input->post('position'),
+                // 'position'   => $this->input->post('position'),
                 'updated_at' => date("Y-m-d H-i-s"),
                 'updated_by' => $this->session->userdata('id')
             );

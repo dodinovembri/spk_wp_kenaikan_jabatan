@@ -26,21 +26,31 @@
 
 						<!-- /.box-header -->
 						<!-- form start -->
-						<form role="form" action="<?php echo base_url('report/update/'); echo $report->result_id ?>" method="post" enctype="multipart/form-data">
+						<form role="form" action="<?php echo base_url('report/update/');
+													echo $report->result_id ?>" method="post" enctype="multipart/form-data">
 							<div class="box-body">
-                                <div class="form-group">
+								<div class="form-group">
 									<label for="nik">Nama</label>
 									<input type="text" name="employee_id" class="form-control" id="nik" value="<?php echo $report->name ?>" readonly>
-								</div>	
+								</div>
+								<?php if ($this->session->userdata('role_id') == 0) { ?>
+									<div class="form-group">
+										<label for="nik">Status</label>
+										<select name="status" id="" class="form-control">
+											<option value="">Select</option>
+											<option value="4">Tidak Terbaru</option>
+										</select>
+									</div>
+								<?php } ?>
 								<div class="form-group">
 									<label for="nik">Posisi Baru</label>
 									<input type="text" name="new_position" class="form-control" id="nik" placeholder="Masukkan Posisi Baru" required>
-								</div>		
+								</div>
 
-                                <div class="box-footer">
+								<div class="box-footer">
 									<button type="submit" class="btn btn-primary">Simpan</button>
 									<a href="<?php echo base_url('report') ?>"><button type="button" class="btn btn-danger">Batal</button></a>
-								</div>						
+								</div>
 						</form>
 
 					</div>

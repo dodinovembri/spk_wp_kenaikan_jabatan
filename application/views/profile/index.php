@@ -83,7 +83,7 @@
 										<label for="inputSkills" class="col-sm-2 control-label">Posisi</label>
 
 										<div class="col-sm-10">
-										<input type="text" name="position" class="form-control" id="position" value="<?php echo $employee->position; ?>" placeholder="Masukkan Posisi">
+										<input type="text" name="position" class="form-control" id="position" value="<?php echo $employee->position; ?>" placeholder="Masukkan Posisi" disabled>
 										</div>
 									</div>
 									<div class="form-group">

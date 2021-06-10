@@ -26,8 +26,8 @@
 								<thead>
 									<tr>
 										<th width="10px">No</th>
-										<th>Date Of Promotion</th>
-										<th>Employee Id</th>
+										<th>Tanggal Promosi</th>
+										<th>Nama Pegawai</th>
 										<th>Ranking</th>
 										<th>Status</th>	
 										<th>Posisi Baru</th>	
@@ -45,8 +45,30 @@
 											<td><?php echo $value->new_position; ?></td>
 											<td>
 											<a href="<?php echo base_url('report/edit/'); echo $value->result_id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+											<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->result_id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
+										<div class="modal modal-warning fade" id="delete<?php echo $value->result_id; ?>">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span></button>
+														<h4 class="modal-title">Delete Data</h4>
+													</div>
+													<div class="modal-body">
+														<p>Kamu yakin ingin menghapus data ini?</p>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
+														<a href="<?php echo base_url('report/destroy/');
+																	echo $value->result_id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
+													</div>
+												</div>
+												<!-- /.modal-content -->
+											</div>
+											<!-- /.modal-dialog -->
+										</div>
 									<?php } ?>
 							</table>
 						</div>						
