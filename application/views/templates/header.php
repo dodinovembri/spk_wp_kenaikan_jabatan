@@ -40,12 +40,15 @@
 <?php if ($this->session->userdata('logged_in') != 1) { ?>
     <style type="text/css">
         .body {
-            background-color: #8ea9e0;
+           background-image: url('assets/img/3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
         }
     </style>
 
     <body class="body">
     <?php } else { ?>
 
-        <body class="hold-transition skin-blue sidebar-mini">
+        <body class="hold-transition skin-green sidebar-mini">
         <?php } ?>

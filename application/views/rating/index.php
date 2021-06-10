@@ -26,7 +26,7 @@
 						<!-- /.box-header -->
 						<div class="box-body">
 							<?php if ($this->session->userdata('role_id') != 3) { ?>
-								<a href="<?php echo base_url('rating/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 18%;"><i class="fa fa-refresh"> </i> &nbsp; Reset & Tambah Baru</button></a>
+								<a href="<?php echo base_url('rating/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 10%;"><i class=""> </i> &nbsp; Nilai</button></a>
 								<br>
 							<?php } ?>
 							<?php if ($this->session->flashdata('success')) { ?>

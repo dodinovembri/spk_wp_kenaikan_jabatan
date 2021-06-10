@@ -5,7 +5,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>S</b>BR</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Semen</b> BatuRaja</span>
+    <span class="logo-lg"><b>Semen</b></h7> BatuRaja</span>
 </a>
 <?php 
     $CI =& get_instance();
