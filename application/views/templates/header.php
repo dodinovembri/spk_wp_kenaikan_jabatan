@@ -40,7 +40,10 @@
 <?php if ($this->session->userdata('logged_in') != 1) { ?>
     <style type="text/css">
         .body {
-            background-color: #8ea9e0;
+            background-image: url('assets/img/1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
         }
     </style>
 
