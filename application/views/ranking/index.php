@@ -160,7 +160,7 @@
 									?>
 										<tr>
 											<td><?php echo $no; ?></td>
-											<td><?php echo $query->row()->nik; ?></td>
+											<td><a href="<?php echo base_url('ranking/show/'); echo $employee_id; ?>"><b><?php echo $query->row()->nik; ?></b></a></td>
 											<td><?php echo $query->row()->name; ?></td>
 											<td><?php echo check_gender($query->row()->gender); ?></td>
 											<td><?php echo $query->row()->email; ?></td>

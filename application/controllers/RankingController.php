@@ -7,7 +7,7 @@ class RankingController extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('function');
-        $this->load->model(['ResultModel', 'HelperModel']);
+        $this->load->model(['ResultModel', 'HelperModel', 'RatingModel']);
 
         if ($this->session->userdata('logged_in') != 1) {
             return redirect(base_url('login'));
@@ -108,7 +108,11 @@ class RankingController extends CI_Controller {
 
     public function show($id)
     {
-        //
+        $data['employee_ratings'] = $this->RatingModel->getWithBuilder($id)->result();
+
+        $this->load->view('templates/header');
+		$this->load->view('ranking/show', $data);
+        $this->load->view('templates/footer');
     }
 
     public function edit($id)

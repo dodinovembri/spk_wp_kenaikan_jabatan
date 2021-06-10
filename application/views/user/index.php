@@ -24,8 +24,9 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<a href="<?php echo base_url('user/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 11%;"><i class="fa fa-plus"></i> Tambah Baru</button></a>
-							<br>
+							<a href="<?php echo base_url('user/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 20%; display: inline-block"><i class="fa fa-plus"></i> Tambah Pegawai ke User</button></a>
+							<a href="<?php echo base_url('user/new/create') ?>"><button type="button" class="btn btn-block btn-primary" style="width: 15%; display: inline-block"><i class="fa fa-plus"></i> Tambah User Baru</button></a>
+							<br><br>
 							<?php if ($this->session->flashdata('success')) { ?>
 								<div class="alert alert-success alert-dismissible" role="alert">
 									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

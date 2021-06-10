@@ -17,6 +17,8 @@
                 return "Direktur";
             }elseif ($role_id == 4) {
                 return "Employee";
+            }elseif ($role_id == 5) {
+                return "Other";
             }
         }
     }

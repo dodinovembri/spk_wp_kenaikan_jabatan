@@ -24,3 +24,4 @@ CREATE TABLE users (
 | 2 | Interviewer |
 | 3 | director |
 | 4 | employees |
+| 5 | Others |

@@ -62,6 +62,8 @@ $route['logout'] = 'HomeController/logout';
 // routes for user
 $route['user'] = 'UserController';
 $route['user/create'] = 'UserController/create';
+$route['user/new/create'] = 'UserController/create_new';
+$route['user/new/store'] = 'UserController/store_new';
 $route['user/store'] = 'UserController/store';
 $route['user/edit/(:any)'] = 'UserController/edit/$1';
 $route['user/show/(:any)'] = 'UserController/show/$1';

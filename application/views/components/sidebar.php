@@ -54,7 +54,7 @@
                 <li class="header">SETTING CONFIGURATION</li>
                 <!-- /criteria-->
                 <li class="<?php if ($this->uri->segment(1) == "criteria" || $this->uri->segment(1) == "criterion_value" || $this->uri->segment(1) == "criterion_values")  echo "active"; ?>"><a href="<?php echo base_url('criteria') ?>"><i class="fa fa-laptop"></i> <span>Kriteria</span></a></li>            
-            <?php } elseif ($this->session->userdata('role_id') == 4) { ?>
+            <?php } elseif ($this->session->userdata('role_id') == 4 || $this->session->userdata('role_id') == 5) { ?>
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if ($this->uri->segment(1) == "home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <!-- /employee-->
