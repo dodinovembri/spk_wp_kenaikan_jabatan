@@ -40,7 +40,7 @@
 <?php if ($this->session->userdata('logged_in') != 1) { ?>
     <style type="text/css">
         .body {
-            background-image: url('assets/img/1.png');
+           background-image: url('assets/img/3.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
@@ -50,5 +50,5 @@
     <body class="body">
     <?php } else { ?>
 
-        <body class="hold-transition skin-blue sidebar-mini">
+        <body class="hold-transition skin-green sidebar-mini">
         <?php } ?>
