@@ -70,7 +70,7 @@
 													</td>
 												</tr>
 											<?php }
-										}elseif ($this->session->userdata('role_id') == 1) {
+										}elseif ($this->session->userdata('role_id') == 2) {
 											if ($value->criteria_code == 'C9') { ?>
 												<tr>
 													<td><?php echo $no; ?></td>
@@ -84,7 +84,7 @@
 													</td>
 												</tr>
 											<?php }
-										}elseif ($this->session->userdata('role_id') == 2) {
+										}elseif ($this->session->userdata('role_id') == 1) {
 											if ($value->criteria_code == 'C1' || $value->criteria_code == 'C2' || $value->criteria_code == 'C3' || $value->criteria_code == 'C4' || $value->criteria_code == 'C5' || $value->criteria_code == 'C6' || $value->criteria_code == 'C8') { ?>
 												<tr>
 													<td><?php echo $no; ?></td>
