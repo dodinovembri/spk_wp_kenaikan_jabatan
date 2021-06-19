@@ -55,6 +55,10 @@
 									<input type="text" name="location" class="form-control" id="location" value="<?php echo $employee->location; ?>" placeholder="Masukkan Lokasi">
 								</div>
 								<div class="form-group">
+									<label for="division">Divisi</label>
+									<input type="text" name="division" class="form-control" id="division" value="<?php echo $employee->division; ?>" placeholder="Masukkan Divisi">
+								</div>
+								<div class="form-group">
 									<label for="position">Posisi</label>
 									<input type="text" name="position" class="form-control" id="position" value="<?php echo $employee->position; ?>" placeholder="Masukkan Posisi">
 								</div>

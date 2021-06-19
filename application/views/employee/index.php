@@ -47,9 +47,10 @@
 										<th>Gender</th>
 										<th>Email</th>
 										<th>Lokasi</th>
+										<th>Divisi</th>
 										<th>Posisi</th>
 										<th>Posisi Baru</th>
-										<?php if ($this->session->userdata('role_id') == 0) { ?>
+										<?php if ($this->session->userdata('role_id') != 3) { ?>
 											<th>Aksi</th>
 										<?php } ?>
 									</tr>
@@ -62,24 +63,44 @@
 										<tr>
 											<td><?php echo $no; ?></td>
 											<td>
-											<?php if ($this->session->userdata('role_id') != 3) { ?>
-												<a href="<?php echo base_url('ratings/'); echo $value->id; ?>"><b><?php echo $value->nik; ?></b></a>
-											<?php }else{ ?>
-												<?php echo $value->nik; ?>
-											<?php } ?>
+												<?php if ($this->session->userdata('role_id') == 0) {
+													if ($value->is_rating_admin == 1) { ?>
+														<?php echo $value->nik; ?><sup><i class="fa fa-star" style="margin-right: 6px; color: blue;"></i></sup>
+													<?php } else{ ?>
+														<?php echo $value->nik; ?>
+													<?php }
+												}elseif ($this->session->userdata('role_id') == 1) {
+													if ($value->is_rating_leader == 1) { ?>
+														<?php echo $value->nik; ?><sup><i class="fa fa-star" style="margin-right: 6px; color: blue;"></i></sup>
+													<?php } else{ ?>
+														<?php echo $value->nik; ?>
+													<?php }
+												}elseif ($this->session->userdata('role_id') == 2) { 
+													if ($value->is_rating_interviewer == 1) { ?>
+														<?php echo $value->nik; ?><sup><i class="fa fa-star" style="margin-right: 6px; color: blue;"></i></sup>
+													<?php } else{ ?>
+														<?php echo $value->nik; ?>
+													<?php }
+												}elseif ($this->session->userdata('role_id') == 3) {
+													echo $value->nik;
+												} ?>
 											</td>
 											<td><?php echo $value->name; ?></td>
 											<td><?php echo check_gender($value->gender); ?></td>
 											<td><?php echo $value->email ?></td>
 											<td><?php echo $value->location; ?></td>
+											<td><?php echo $value->division; ?></td>
 											<td><?php echo $value->position; ?></td>
 											<td><?php echo $value->new_position; ?></td>
-											<?php if ($this->session->userdata('role_id') == 0) { ?>
-												<td>
-												<a href="<?php echo base_url('employee/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+											<td>
+												<?php if ($this->session->userdata('role_id') != 3) { ?>													
+													<a href="<?php echo base_url('ratings/'); echo $value->id; ?>"><i class="fa fa-ticket" style="margin-right: 6px;"></i></a>
+												<?php } ?>
+												<?php if ($this->session->userdata('role_id') == 0) { ?>
+													<a href="<?php echo base_url('employee/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 													<a data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
-												</td>
-											<?php } ?>
+												<?php } ?>
+											</td>
 										</tr>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->id; ?>">
 											<div class="modal-dialog">
@@ -94,8 +115,7 @@
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-outline" data-dismiss="modal">Batal</button>
-														<a href="<?php echo base_url('employee/destroy/');
-															echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
+														<a href="<?php echo base_url('employee/destroy/'); echo $value->id; ?>"><button type="button" class="btn btn-outline">Hapus</button></a>
 													</div>
 												</div>
 												<!-- /.modal-content -->

@@ -56,7 +56,7 @@ class UserController extends CI_Controller
             'created_by' => $this->session->userdata('id')
         );
 
-        
+        $this->UserModel->insert($data);
         $this->session->set_flashdata('success', "Data User berhasil ditambahkan!");
         return redirect(base_url('user'));
     }

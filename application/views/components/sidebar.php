@@ -28,9 +28,9 @@
                 <li class="header">TRANSACTIONS</li>
                 <li class="<?php if ($this->uri->segment(1) == "employee" || $this->uri->segment(1) == "ratings" || $this->uri->segment(1) == "rating")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
                 <!-- /rating-->
-                <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Ranking</span></a></li>
+                <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Perhitungan WP</span></a></li>
                 <!-- /user-->
-                <li class="<?php if ($this->uri->segment(1) == "report")  echo "active"; ?>"><a href="<?php echo base_url('report') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Hasil</span></a></li>
+                <li class="<?php if ($this->uri->segment(1) == "report")  echo "active"; ?>"><a href="<?php echo base_url('report') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Hasil Ranking</span></a></li>
                 <li class="header">SETTING CONFIGURATION</li>
                 <li class="<?php if ($this->uri->segment(1) == "user")  echo "active"; ?>"><a href="<?php echo base_url('user') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Users</span></a></li>
                 <!-- /criteria-->
@@ -42,7 +42,7 @@
                 <li class="header">TRANSACTIONS</li>
                 <li class="<?php if ($this->uri->segment(1) == "employee" || $this->uri->segment(1) == "ratings" || $this->uri->segment(1) == "rating")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
                 <!-- /rating-->
-                <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Ranking</span></a></li>
+                <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Perhitungan WP</span></a></li>
                 <!-- /user-->
             <?php } elseif ($this->session->userdata('role_id') == 3) { ?>              
                 <li class="header">MAIN NAVIGATION</li>

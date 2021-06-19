@@ -34,7 +34,7 @@
 									<div class="form-group">
 										<?php if ($this->session->userdata('role_id') == 0) {
 											if ($value->criteria_code == 'C7') { ?>
-												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?></label>
+												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?> <?php echo "(Bobot: $value->criteria_weight%)" ?></label>
 												<select class="form-control" name="criteria_criterion[]" required="">
 													<option value="">Pilih</option>
 													<?php
@@ -51,7 +51,7 @@
 											<?php }
 										}elseif ($this->session->userdata('role_id') == 2) {
 											if ($value->criteria_code == 'C9') { ?>
-												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?></label>
+												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?> <?php echo "(Bobot: $value->criteria_weight%)" ?></label>
 												<select class="form-control" name="criteria_criterion[]" required="">
 													<option value="">Pilih</option>
 													<?php
@@ -68,7 +68,7 @@
 											<?php }
 										}elseif ($this->session->userdata('role_id') == 1) {
 											if ($value->criteria_code == 'C1' || $value->criteria_code == 'C2' || $value->criteria_code == 'C3' || $value->criteria_code == 'C4' || $value->criteria_code == 'C5' || $value->criteria_code == 'C6' || $value->criteria_code == 'C8') { ?>
-												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?></label>
+												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?> <?php echo "(Bobot: $value->criteria_weight%)" ?></label>
 												<select class="form-control" name="criteria_criterion[]" required="">
 													<option value="">Pilih</option>
 													<?php

@@ -47,6 +47,19 @@ class RatingController extends CI_Controller {
 
             $this->RatingModel->destroyAllByCriteria($criteria_id, $employee_id);
 
+            $employee = $this->EmployeeModel->getById($employee_id)->row();
+            $is_rating_admin = $employee->is_rating_admin;
+            $is_rating_leader = $employee->is_rating_leader;
+            $is_rating_interviewer = $employee->is_rating_interviewer;
+
+            if ($this->session->userdata('role_id') == 0) {
+                $is_rating_admin = 1;
+            }elseif ($this->session->userdata('role_id') == 1) {
+                $is_rating_leader = 1;
+            }elseif ($this->session->userdata('role_id') == 2) {
+                $is_rating_interviewer = 1;
+            }
+
             $data = array(
                 'employee_id' => $employee_id,
                 'criteria_id' => $criteria_id,
@@ -55,7 +68,16 @@ class RatingController extends CI_Controller {
                 'created_by' => $this->session->userdata('id')
             );
 
+            $data_employee = array(
+                'is_rating_admin' => $is_rating_admin,
+                'is_rating_leader' => $is_rating_leader,
+                'is_rating_interviewer' => $is_rating_interviewer,
+                'updated_at' => date("Y-m-d H-i-s"),
+                'updated_by' => $this->session->userdata('id')
+            );
+            
             $this->RatingModel->insert($data);
+            $this->EmployeeModel->update($data_employee, $employee_id);
         }
 
         $this->session->set_flashdata('success', "Data rating pegawai berhasil ditambahkan!");

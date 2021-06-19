@@ -45,6 +45,7 @@ class EmployeeController extends CI_Controller
                 'email'      => $this->input->post('email'),
                 'image'      => $this->upload->data('file_name'),
                 'location'   => $this->input->post('location'),
+                'division'   => $this->input->post('division'),
                 'position'   => $this->input->post('position'),
                 'created_at' => date("Y-m-d H-i-s"),
                 'created_by' => $this->session->userdata('id')
@@ -62,6 +63,7 @@ class EmployeeController extends CI_Controller
                 'gender'     => $this->input->post('gender'),
                 'email'      => $this->input->post('email'),
                 'location'   => $this->input->post('location'),
+                'division'   => $this->input->post('division'),
                 'position'   => $this->input->post('position'),
                 'created_at' => date("Y-m-d H-i-s"),
                 'created_by' => $this->session->userdata('id')
@@ -105,6 +107,7 @@ class EmployeeController extends CI_Controller
                 'gender'     => $this->input->post('gender'),
                 'image'      => $this->upload->data('file_name'),
                 'location'   => $this->input->post('location'),
+                'division'   => $this->input->post('division'),
                 'position'   => $this->input->post('position'),
                 'updated_at' => date("Y-m-d H-i-s"),
                 'updated_by' => $this->session->userdata('id')
@@ -121,6 +124,7 @@ class EmployeeController extends CI_Controller
                 'nik'        => $this->input->post('nik'),
                 'gender'     => $this->input->post('gender'),
                 'location'   => $this->input->post('location'),
+                'division'   => $this->input->post('division'),
                 'position'   => $this->input->post('position'),
                 'updated_at' => date("Y-m-d H-i-s"),
                 'updated_by' => $this->session->userdata('id')
