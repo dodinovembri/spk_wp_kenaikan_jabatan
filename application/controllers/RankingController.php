@@ -7,7 +7,7 @@ class RankingController extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('function');
-        $this->load->model(['ResultModel', 'HelperModel', 'RatingModel']);
+        $this->load->model(['ResultModel', 'HelperModel', 'RatingModel', 'EmployeeModel', 'PositionHistoryModel']);
 
         if ($this->session->userdata('logged_in') != 1) {
             return redirect(base_url('login'));
@@ -100,6 +100,35 @@ class RankingController extends CI_Controller {
             $i++;
             $this->ResultModel->insert($data);
         }
+
+        // for update report
+        $result_id = $this->ResultModel->getLast()->row();
+        
+        $employee = $this->EmployeeModel->getById($result_id->employee_id)->row();        
+        $new_position = $this->input->post('new_position');
+        $status = $this->input->post('status');
+        $status = $status == 4 ? $status : "1";
+        
+        $result_data = array(
+            'status' => $status
+        );
+
+        $employee_data = array(
+            'new_position' => $employee->position + 1,
+            'updated_at'      => date("Y-m-d H-i-s"),
+            'updated_by'      => $this->session->userdata('id')
+        );
+
+        $old_position = array(
+            'employee_id' => $employee->id,
+            'position' => $employee->position,
+            'created_at'      => date("Y-m-d H-i-s"),
+            'created_by'      => $this->session->userdata('id')
+        );
+
+        $this->ResultModel->update($result_data, $result_id->id);        
+        $this->EmployeeModel->update($employee_data, $employee->id);        
+        $this->PositionHistoryModel->insert($old_position);
 
         $this->session->set_flashdata('success', "Data ranking pegawai berhasil disimpan!");
         return redirect(base_url("employee"));

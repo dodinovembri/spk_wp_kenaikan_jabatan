@@ -26,6 +26,11 @@ class ResultModel extends CI_Model
         return $this->db->get($this->_table);
     }   
 
+    public function getLast()
+    {
+        return $this->db->query("SELECT id, employee_id, min(ranking) as ranking FROM result WHERE status = 2");
+    }
+
     public function getWithJoin()
     {
         $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name, employee.new_position as new_position');
@@ -70,5 +75,10 @@ class ResultModel extends CI_Model
     {
         $this->db->set('status', 4);
         $this->db->update($this->_table);
+    }
+
+    public function division_chart()
+    {
+        return $this->db->query("SELECT COUNT(*) as total, employee.division_id AS division_id, division.division_name AS division_name FROM result LEFT JOIN employee ON result.employee_id = employee.id LEFT JOIN division ON employee.division_id = division.id WHERE result.status = 1 GROUP BY employee.division_id");
     }
 }

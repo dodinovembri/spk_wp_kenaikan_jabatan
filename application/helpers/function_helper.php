@@ -45,6 +45,23 @@
         }
     } 
 
+    if (!function_exists('check_position')) {
+        function check_position($position)
+        {
+            if ($position == 1) {
+                return "ADM/OPR/MEC/ELEC/ANL";
+            }elseif ($position == 2) {
+                return "Junior Manager";
+            }elseif ($position == 3) {
+                return "Manager";
+            }elseif ($position == 4) {
+                return "Senior Manager";
+            }else{
+                return "";
+            }
+        }
+    }     
+
     if (!function_exists('check_report_status')) {
         function check_report_status($report_status)
         {

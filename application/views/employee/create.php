@@ -56,11 +56,22 @@
 								</div>
 								<div class="form-group">
 									<label for="division">Divisi</label>
-									<input type="text" name="division" class="form-control" id="division" placeholder="Masukkan Divisi">
+									<select name="division_id" id="" class="form-control">
+										<option value="">Select</option>
+										<?php foreach ($divisions as $key => $value) { ?>
+											<option value="<?php echo $value->id ?>"><?php echo $value->division_name ?></option>
+										<?php } ?>
+									</select>
 								</div>
 								<div class="form-group">
-									<label for="position">Posisi</label>
-									<input type="text" name="position" class="form-control" id="position" placeholder="Masukkan Posisi">
+									<label for="division">Position</label>
+									<select name="position" id="" class="form-control">
+										<option value="">Select</option>
+										<option value="1">ADM/OPR/MEC/ELEC/ANL</option>
+										<option value="2">Junior Manager</option>
+										<option value="3">Manager</option>
+										<option value="4">Senior Manager</option>
+									</select>
 								</div>
 								<!-- /.box-body -->
 

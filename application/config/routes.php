@@ -142,3 +142,21 @@ $route['employee_report/store_pw/(:any)'] = 'EmployeeReportController/store_pw/$
 $route['employee_report/edit/(:any)'] = 'EmployeeReportController/edit/$1';
 $route['employee_report/update/(:any)'] = 'EmployeeReportController/update/$1';
 $route['employee_report/destroy/(:any)'] = 'EmployeeReportController/destroy/$1';
+
+// routes for division
+$route['division'] = 'DivisionController';
+$route['division/create'] = 'DivisionController/create';
+$route['division/store'] = 'DivisionController/store';
+$route['division/edit/(:any)'] = 'DivisionController/edit/$1';
+$route['division/show/(:any)'] = 'DivisionController/show/$1';
+$route['division/update/(:any)'] = 'DivisionController/update/$1';
+$route['division/destroy/(:any)'] = 'DivisionController/destroy/$1';
+
+// routes for division chart
+$route['division_chart'] = 'DivisionChartController';
+$route['division_chart/create'] = 'DivisionChartController/create';
+$route['division_chart/store'] = 'DivisionChartController/store';
+$route['division_chart/edit/(:any)'] = 'DivisionChartController/edit/$1';
+$route['division_chart/show/(:any)'] = 'DivisionChartController/show/$1';
+$route['division_chart/update/(:any)'] = 'DivisionChartController/update/$1';
+$route['division_chart/destroy/(:any)'] = 'DivisionChartController/destroy/$1';

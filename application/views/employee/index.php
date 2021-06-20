@@ -90,8 +90,8 @@
 											<td><?php echo $value->email ?></td>
 											<td><?php echo $value->location; ?></td>
 											<td><?php echo $value->division; ?></td>
-											<td><?php echo $value->position; ?></td>
-											<td><?php echo $value->new_position; ?></td>
+											<td><?php echo check_position($value->position); ?></td>
+											<td><?php echo check_position($value->new_position); ?></td>
 											<td>
 												<?php if ($this->session->userdata('role_id') != 3) { ?>													
 													<a href="<?php echo base_url('ratings/'); echo $value->id; ?>"><i class="fa fa-ticket" style="margin-right: 6px;"></i></a>

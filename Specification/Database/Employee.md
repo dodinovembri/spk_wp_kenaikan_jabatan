@@ -10,7 +10,7 @@ CREATE TABLE employee (
 	email VARCHAR(255) NULL,
 	image VARCHAR(50) NULL,
 	location TEXT NULL,
-    division VARCHAR(255) NULL,
+    division_id VARCHAR(255) NULL,
 	position VARCHAR(255) NULL,
 	new_position VARCHAR(255) NULL,
 	type TINYINT DEFAULT 4,
@@ -29,3 +29,11 @@ CREATE TABLE employee (
 | ---- | ---- |
 | 0 | Perempuan |
 | 1 | Laki-Laki |
+
+## Position
+| Code | Name |
+| ---- | ---- |
+| 0 | ADM/OPR/MEC/ELEC/ANL |
+| 1 | Junior Manager |
+| 2 | Manager |
+| 3 | Senior Manager |

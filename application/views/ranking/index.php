@@ -77,7 +77,7 @@
 												<td><?php echo $query->row()->name; ?></td>
 												<td><?php echo check_gender($query->row()->gender); ?></td>
 												<td><?php echo $query->row()->email; ?></td>
-												<td><?php echo $query->row()->position; ?></td>
+												<td><?php echo check_position($query->row()->position); ?></td>
 												<td><?php echo $value['total_s_vector']; ?></td>
 											</tr>
 										<?php } ?>
@@ -118,7 +118,7 @@
 												<td><?php echo $query->row()->name; ?></td>
 												<td><?php echo check_gender($query->row()->gender); ?></td>
 												<td><?php echo $query->row()->email; ?></td>
-												<td><?php echo $query->row()->position; ?></td>
+												<td><?php echo check_position($query->row()->position); ?></td>
 												<td><?php echo $value['v_vector']; ?></td>
 											</tr>
 										<?php } ?>
@@ -147,6 +147,7 @@
 										<th>Gender</th>
 										<th>Email</th>
 										<th>Posisi</th>
+										<th>Posisi Baru</th>
 										<th>Hasil Perhitungan</th>
 									</tr>
 								</thead>
@@ -164,7 +165,8 @@
 											<td><?php echo $query->row()->name; ?></td>
 											<td><?php echo check_gender($query->row()->gender); ?></td>
 											<td><?php echo $query->row()->email; ?></td>
-											<td><?php echo $query->row()->position; ?></td>
+											<td><?php echo check_position($query->row()->position); ?></td>
+											<td><?php echo check_position($query->row()->new_position); ?></td>
 											<td><?php echo$value['v_vector']; ?></td>
 										</tr>
 									<?php } ?>

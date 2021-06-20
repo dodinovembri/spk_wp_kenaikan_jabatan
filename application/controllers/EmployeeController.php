@@ -7,12 +7,12 @@ class EmployeeController extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['EmployeeModel']); //untuk load
+        $this->load->model(['EmployeeModel', 'DivisionModel']); //untuk load
     }
 
     public function index()
     {
-        $data['employees'] = $this->EmployeeModel->getByType()->result();
+        $data['employees'] = $this->EmployeeModel->getByTypes()->result();
 
         $this->load->view('templates/header');
         $this->load->view('employee/index', $data);
@@ -21,8 +21,10 @@ class EmployeeController extends CI_Controller
 
     public function create()
     {
+        $data['divisions'] = $this->DivisionModel->get()->result();
+
         $this->load->view('templates/header');
-        $this->load->view('employee/create');
+        $this->load->view('employee/create', $data);
         $this->load->view('templates/footer');
     }
 
@@ -45,7 +47,7 @@ class EmployeeController extends CI_Controller
                 'email'      => $this->input->post('email'),
                 'image'      => $this->upload->data('file_name'),
                 'location'   => $this->input->post('location'),
-                'division'   => $this->input->post('division'),
+                'division_id'   => $this->input->post('division_id'),
                 'position'   => $this->input->post('position'),
                 'created_at' => date("Y-m-d H-i-s"),
                 'created_by' => $this->session->userdata('id')
@@ -63,7 +65,7 @@ class EmployeeController extends CI_Controller
                 'gender'     => $this->input->post('gender'),
                 'email'      => $this->input->post('email'),
                 'location'   => $this->input->post('location'),
-                'division'   => $this->input->post('division'),
+                'division_id'   => $this->input->post('division_id'),
                 'position'   => $this->input->post('position'),
                 'created_at' => date("Y-m-d H-i-s"),
                 'created_by' => $this->session->userdata('id')
@@ -83,6 +85,7 @@ class EmployeeController extends CI_Controller
     public function edit($id)
     {
         $data['employee'] = $this->EmployeeModel->getById($id)->row();
+        $data['divisions'] = $this->DivisionModel->get()->result();
 
         $this->load->view('templates/header');
         $this->load->view('employee/edit', $data);
@@ -107,7 +110,7 @@ class EmployeeController extends CI_Controller
                 'gender'     => $this->input->post('gender'),
                 'image'      => $this->upload->data('file_name'),
                 'location'   => $this->input->post('location'),
-                'division'   => $this->input->post('division'),
+                'division_id'   => $this->input->post('division_id'),
                 'position'   => $this->input->post('position'),
                 'updated_at' => date("Y-m-d H-i-s"),
                 'updated_by' => $this->session->userdata('id')
@@ -124,7 +127,7 @@ class EmployeeController extends CI_Controller
                 'nik'        => $this->input->post('nik'),
                 'gender'     => $this->input->post('gender'),
                 'location'   => $this->input->post('location'),
-                'division'   => $this->input->post('division'),
+                'division_id'   => $this->input->post('division_id'),
                 'position'   => $this->input->post('position'),
                 'updated_at' => date("Y-m-d H-i-s"),
                 'updated_by' => $this->session->userdata('id')
