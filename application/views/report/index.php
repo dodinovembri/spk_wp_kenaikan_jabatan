@@ -21,7 +21,8 @@
 							<h3 class="box-title">Data Perankingan Pegawai</h3>
 						</div>
 						<!-- /.box-header -->
-						<div class="box-body">						
+						<div class="box-body">	
+						<a href="<?= base_url('report/export/pdf') ?>"target="_blank" style="float:left; margin-right:2px; color:black" ><button>Pdf File</button></a>
 							<table id="example6" class="table table-bordered table-striped">
 								<thead>
 									<tr>

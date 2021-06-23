@@ -6,7 +6,7 @@ class EmployeeReportController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['ResultModel', 'EmployeeModel', 'PositionHistoryModel']);
+        $this->load->model(['ResultModel', 'EmployeeModel']);
     }
 
 	public function index()

@@ -33,7 +33,7 @@ CREATE TABLE employee (
 ## Position
 | Code | Name |
 | ---- | ---- |
-| 0 | ADM/OPR/MEC/ELEC/ANL |
-| 1 | Junior Manager |
-| 2 | Manager |
-| 3 | Senior Manager |
+| 1 | ADM/OPR/MEC/ELEC/ANL |
+| 2 | Junior Manager |
+| 3 | Manager |
+| 4 | Senior Manager |

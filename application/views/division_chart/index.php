@@ -90,7 +90,7 @@
                 <script>
                     Highcharts.chart('container', {
                         chart: {
-                            type: 'column'
+                            type: 'line'
                         },
                         title: {
                             text: 'Grafik Per Divisi'

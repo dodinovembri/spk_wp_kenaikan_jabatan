@@ -7,7 +7,7 @@ class RankingController extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('function');
-        $this->load->model(['ResultModel', 'HelperModel', 'RatingModel', 'EmployeeModel', 'PositionHistoryModel']);
+        $this->load->model(['ResultModel', 'HelperModel', 'RatingModel', 'EmployeeModel']);
 
         if ($this->session->userdata('logged_in') != 1) {
             return redirect(base_url('login'));
@@ -119,16 +119,16 @@ class RankingController extends CI_Controller {
             'updated_by'      => $this->session->userdata('id')
         );
 
-        $old_position = array(
-            'employee_id' => $employee->id,
-            'position' => $employee->position,
-            'created_at'      => date("Y-m-d H-i-s"),
-            'created_by'      => $this->session->userdata('id')
-        );
+        // $old_position = array(
+        //     'employee_id' => $employee->id,
+        //     'position' => $employee->position,
+        //     'created_at'      => date("Y-m-d H-i-s"),
+        //     'created_by'      => $this->session->userdata('id')
+        // );
 
         $this->ResultModel->update($result_data, $result_id->id);        
         $this->EmployeeModel->update($employee_data, $employee->id);        
-        $this->PositionHistoryModel->insert($old_position);
+        // $this->PositionHistoryModel->insert($old_position);
 
         $this->session->set_flashdata('success', "Data ranking pegawai berhasil disimpan!");
         return redirect(base_url("employee"));
