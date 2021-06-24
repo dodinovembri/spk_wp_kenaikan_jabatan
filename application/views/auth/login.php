@@ -5,7 +5,7 @@
 	<!-- /.login-logo -->
 	<div class="login-box-body">
 		<p class="login-box-msg"><img src="<?php echo base_url() ?>assets/img/logo1.png" alt="logo" widht="10%">
-			<h7><b style="color: #3CB371">SPK Promosis Jabatan
+			<h7><b style="color: #3CB371">SPK Promosi Jabatan
 		</p></b></h7>
 		<?php if ($this->session->flashdata('success')) { ?>
 			<div class="alert alert-success alert-dismissible" role="alert">

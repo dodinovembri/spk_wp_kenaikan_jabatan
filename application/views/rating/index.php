@@ -21,7 +21,7 @@
 
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Rating Pegawai</h3>
+							<h3 class="box-title"><b>Data Rating Pegawai</h3></b>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
@@ -40,7 +40,7 @@
 								</div>
 							<?php } ?>
 							<table id="example1" class="table table-bordered table-striped">
-								<thead>
+								<thead style="background-color: #2E8B57; color: #F0F8FF">
 									<tr>
 										<th>No</th>
 										<th>Pegawai</th>

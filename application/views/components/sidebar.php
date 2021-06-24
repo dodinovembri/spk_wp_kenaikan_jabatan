@@ -25,13 +25,13 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if ($this->uri->segment(1) == "home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <!-- /employee-->
-                <li class="header">TRANSACTIONS</li>
+                
                 <li class="<?php if ($this->uri->segment(1) == "employee" || $this->uri->segment(1) == "ratings" || $this->uri->segment(1) == "rating")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
                 <!-- /rating-->
                 <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Perhitungan WP</span></a></li>
                 <!-- /user-->
                 <li class="<?php if ($this->uri->segment(1) == "report")  echo "active"; ?>"><a href="<?php echo base_url('report') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Hasil Ranking</span></a></li>
-                <li class="header">SETTING CONFIGURATION</li>
+                <li class="header"></li>
                 <li class="<?php if ($this->uri->segment(1) == "user")  echo "active"; ?>"><a href="<?php echo base_url('user') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Users</span></a></li>
                 <!-- /criteria-->
                 <li class="<?php if ($this->uri->segment(1) == "criteria" || $this->uri->segment(1) == "criterion_value" || $this->uri->segment(1) == "criterion_values")  echo "active"; ?>"><a href="<?php echo base_url('criteria') ?>"><i class="fa fa-laptop"></i> <span>Kriteria</span></a></li>
@@ -40,7 +40,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if ($this->uri->segment(1) == "home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <!-- /employee-->
-                <li class="header">TRANSACTIONS</li>
+                
                 <li class="<?php if ($this->uri->segment(1) == "employee" || $this->uri->segment(1) == "ratings" || $this->uri->segment(1) == "rating")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>
                 <!-- /rating-->
                 <li class="<?php if ($this->uri->segment(1) == "ranking")  echo "active"; ?>"><a href="<?php echo base_url('ranking') ?>"><i class="fa fa-circle-o"></i> <span>Perhitungan WP</span></a></li>
@@ -49,7 +49,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if ($this->uri->segment(1) == "home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <!-- /employee-->
-                <li class="header">TRANSACTIONS</li>
+                
                 <li class="<?php if ($this->uri->segment(1) == "employee" || $this->uri->segment(1) == "ratings" || $this->uri->segment(1) == "rating")  echo "active"; ?>"><a href="<?php echo base_url('employee') ?>"><i class="fa fa-users"></i> <span>Pegawai</span></a></li>                
                 <li class="<?php if ($this->uri->segment(1) == "report")  echo "active"; ?>"><a href="<?php echo base_url('report') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Laporan</span></a></li>
                 <li class="<?php if ($this->uri->segment(1) == "division_chart")  echo "active"; ?>"><a href="<?php echo base_url('division_chart') ?>"><i class="fa fa-laptop"></i> <span>Grafik</span></a></li>            
@@ -57,7 +57,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if ($this->uri->segment(1) == "home")  echo "active"; ?>"><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <!-- /employee-->
-                <li class="header">TRANSACTIONS</li>
+               
                 <li class="<?php if ($this->uri->segment(1) == "employee_report")  echo "active"; ?>"><a href="<?php echo base_url('employee_report') ?>"><i class="fa fa-circle-o text-aqua"></i> <span>Laporan</span></a></li>
             <?php } ?>
         </ul>

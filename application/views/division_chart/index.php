@@ -7,11 +7,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Grafik Per Divisi
+                Grafik LaPoran
             </h1>
             <ol class="breadcrumb">
                 <li><a href="<?php echo base_url('/') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Grafik Per Divisi</li>
+                <li class="active">Grafik Laporan</li>
             </ol>
         </section>
 
@@ -19,11 +19,15 @@
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
+                <script src="<?php echo base_url('assets/dist/js/highcharts.js') ?>"></script>
+                <!--script src="https://code.highcharts.com/highcharts.js"></script-->
+                <script src="<?php echo base_url('assets/dist/js/exporting.js') ?>"></script>
+                <!--script src="https://code.highcharts.com/modules/exporting.js"></script-->
+                <script src="<?php echo base_url('assets/dist/js/export-data.js') ?>"></script>
+                <!--script src="https://code.highcharts.com/modules/export-data.js"></script-->
+                <script src="<?php echo base_url('assets/dist/js/accessibility.js') ?>"></script>
+                <!--script src="https://code.highcharts.com/modules/accessibility.js"></script-->
 
-                <script src="https://code.highcharts.com/highcharts.js"></script>
-                <script src="https://code.highcharts.com/modules/exporting.js"></script>
-                <script src="https://code.highcharts.com/modules/export-data.js"></script>
-                <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
                 <style>
                     .highcharts-figure,
@@ -90,7 +94,7 @@
                 <script>
                     Highcharts.chart('container', {
                         chart: {
-                            type: 'line'
+                            type: 'pie'
                         },
                         title: {
                             text: 'Grafik Per Divisi'

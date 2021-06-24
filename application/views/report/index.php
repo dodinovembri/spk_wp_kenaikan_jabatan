@@ -18,13 +18,13 @@
 				<div class="col-xs-12">
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Perankingan Pegawai</h3>
+							<h3 class="box-title"><b>DaTa LaPoran PeranKingan PegaWai</small></h3></b>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">	
 						<a href="<?= base_url('report/export/pdf') ?>"target="_blank" style="float:left; margin-right:2px; color:black" ><button>Pdf File</button></a>
 							<table id="example6" class="table table-bordered table-striped">
-								<thead>
+								<thead style="background-color: #2E8B57; color: #F0F8FF">
 									<tr>
 										<th width="10px">No</th>
 										<th>Tanggal Promosi</th>
