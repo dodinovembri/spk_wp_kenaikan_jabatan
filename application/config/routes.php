@@ -69,7 +69,8 @@ $route['user/edit/(:any)'] = 'UserController/edit/$1';
 $route['user/show/(:any)'] = 'UserController/show/$1';
 $route['user/update/(:any)'] = 'UserController/update/$1';
 $route['user/destroy/(:any)'] = 'UserController/destroy/$1';
-
+$route['user/change_password/(:any)'] = 'UserController/change_password/$1';
+$route['user/store_password'] = 'UserController/store_password';
 
 // routes for employee
 $route['employee'] = 'EmployeeController';

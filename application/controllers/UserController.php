@@ -169,4 +169,34 @@ class UserController extends CI_Controller
         $this->session->set_flashdata('success', "Data User berhasil dihapus!");
         return redirect(base_url('user'));
     }
+
+    public function change_password($id)
+    {
+        $data['user_id_changed'] = $id;
+
+        $this->load->view('templates/header');
+        $this->load->view('user/change_password', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function store_password()
+    {
+        $user_id_changed = $this->input->post('user_id_changed');
+        $password = $this->input->post('password');
+        $password_confirm = $this->input->post('password_confirm');
+
+        if ($password != $password_confirm) {
+            $this->session->set_flashdata('warning', "Password yang anda masukkan tidak cocok");
+            return redirect(base_url('user'));
+        }else{
+            $password = md5($this->input->post('password'));
+            $data = array(
+                'password' => $password,
+            );
+
+            $this->UserModel->update($data, $user_id_changed);
+            $this->session->set_flashdata('success', "Password berhasil di ganti!");
+            return redirect(base_url('user'));
+        }
+    }
 }

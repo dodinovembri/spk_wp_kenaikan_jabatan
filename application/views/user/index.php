@@ -56,8 +56,8 @@
 											<td><?php echo $value->email; ?></td>
 											<td><?php echo check_role($value->role_id); ?></td>
 											<td>
-												<a href="<?php echo base_url('user/edit/');
-															echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a href="<?php echo base_url('user/edit/'); echo $value->id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a href="<?php echo base_url('user/change_password/'); echo $value->id; ?>"><i class="fa fa-key" style="margin-right: 6px;"></i></a>
 												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->id; ?>"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
