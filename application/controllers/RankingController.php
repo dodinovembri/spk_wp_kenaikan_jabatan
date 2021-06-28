@@ -84,11 +84,22 @@ class RankingController extends CI_Controller {
         $result = $data;
 
         $date_of_promotion = $this->input->post('date_of_promotion');
-        $i = 1;
+        $i = 0;
 
         $this->ResultModel->updateStatus();
+        $vector = '';
+        $tot = [];
 
         foreach ($result as $key => $value) { 
+
+            if ($vector == $value['v_vector']) {
+                $tot[] = $key;
+            }else{
+                $i++;
+                $i = $i + count($tot);
+                $tot = [];
+            }
+
             $data = array(                
                 'date_of_promotion' => $date_of_promotion,
                 'employee_id' => $value['employee_id'],
@@ -97,38 +108,34 @@ class RankingController extends CI_Controller {
                 'created_at' => date("Y-m-d H-i-s"),
                 'created_by' => $this->session->userdata('id')
             );
-            $i++;
+            // $i++;
             $this->ResultModel->insert($data);
+            $vector = $value['v_vector'];
         }
 
         // for update report
         $result_id = $this->ResultModel->getLast()->row();
-        
-        $employee = $this->EmployeeModel->getById($result_id->employee_id)->row();        
-        $new_position = $this->input->post('new_position');
-        $status = $this->input->post('status');
-        $status = $status == 4 ? $status : "1";
-        
-        $result_data = array(
-            'status' => $status
-        );
+        $id_same = $this->ResultModel->getAllSame($result_id->ranking)->result();
+            
+        foreach ($id_same as $key => $value) {
+            $employee = $this->EmployeeModel->getById($value->employee_id)->row();        
+            $new_position = $this->input->post('new_position');
+            $status = $this->input->post('status');
+            $status = $status == 4 ? $status : "1";
+            
+            $result_data = array(
+                'status' => $status
+            );
 
-        $employee_data = array(
-            'new_position' => $employee->position + 1,
-            'updated_at'      => date("Y-m-d H-i-s"),
-            'updated_by'      => $this->session->userdata('id')
-        );
+            $employee_data = array(
+                'new_position' => $employee->position + 1,
+                'updated_at'      => date("Y-m-d H-i-s"),
+                'updated_by'      => $this->session->userdata('id')
+            );
 
-        // $old_position = array(
-        //     'employee_id' => $employee->id,
-        //     'position' => $employee->position,
-        //     'created_at'      => date("Y-m-d H-i-s"),
-        //     'created_by'      => $this->session->userdata('id')
-        // );
-
-        $this->ResultModel->update($result_data, $result_id->id);        
-        $this->EmployeeModel->update($employee_data, $employee->id);        
-        // $this->PositionHistoryModel->insert($old_position);
+            $this->ResultModel->update($result_data, $value->id);        
+            $this->EmployeeModel->update($employee_data, $employee->id);        
+        }
 
         $this->session->set_flashdata('success', "Data ranking pegawai berhasil disimpan!");
         return redirect(base_url("employee"));

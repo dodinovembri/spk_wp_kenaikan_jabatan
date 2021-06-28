@@ -31,6 +31,11 @@ class ResultModel extends CI_Model
         return $this->db->query("SELECT id, employee_id, min(ranking) as ranking FROM result WHERE status = 2");
     }
 
+    public function getAllSame($id)
+    {
+        return $this->db->query("SELECT * FROM result WHERE status = 2 AND ranking = $id");
+    }
+    
     public function getWithJoin()
     {
         $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name, employee.new_position as new_position');

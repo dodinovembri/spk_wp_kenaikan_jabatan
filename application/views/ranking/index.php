@@ -152,12 +152,22 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php $this->load->helper('function'); ?>
+									<?php $this->load->helper('function');
+									$vector = '';
+									$tot = []; ?>
 									<?php $no = 0; foreach ($v_vector as $key => $value) { 
-										$no++;
+										// $no++;
 										$employee_id = $value['employee_id'];
 										$sql ="SELECT * FROM employee WHERE id = $employee_id";
 										$query = $this->db->query($sql); 
+										
+										if ($vector == $value['v_vector']) {
+											$tot[] = $key;
+										}else{
+											$no++;
+											$no = $no + count($tot);
+											$tot = [];
+										}
 									?>
 										<tr>
 											<td><?php echo $no; ?></td>
@@ -167,8 +177,9 @@
 											<td><?php echo $query->row()->email; ?></td>
 											<td><?php echo check_position($query->row()->position); ?></td>
 											<td><?php echo check_position($query->row()->new_position); ?></td>
-											<td><?php echo$value['v_vector']; ?></td>
+											<td><?php echo $value['v_vector']; ?></td>
 										</tr>
+										<?php $vector = $value['v_vector']; ?>
 									<?php } ?>
 							</table>
 						</div>
