@@ -7,6 +7,7 @@ CREATE TABLE result (
     date_of_promotion DATE NULL,
 	employee_id INT NULL,
 	ranking INT NULL,	
+	v_vector VARCHAR(50) NULL,
     status INT NULL,
  	created_at TIMESTAMP NULL,
    	created_by INT NULL,
