@@ -28,18 +28,19 @@ class ResultModel extends CI_Model
 
     public function getLast()
     {
-        return $this->db->query("SELECT id, employee_id, min(ranking) as ranking FROM result WHERE status = 2");
+        return $this->db->query("SELECT id, employee_id, min(ranking) as ranking, v_vector FROM result WHERE status = 2");
     }
 
-    public function getAllSame($id)
+    public function getAllSame($v_vector)
     {
-        return $this->db->query("SELECT * FROM result WHERE status = 2 AND ranking = $id");
+        return $this->db->query("SELECT * FROM result WHERE status = 2 AND v_vector = $v_vector");
     }
     
     public function getWithJoin()
     {
-        $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name, employee.new_position as new_position');
+        $this->db->select('result.id as result_id, date_of_promotion, employee_id, ranking, result.status as status, employee.name as name, employee.new_position as new_position, division.division_name as division_name');
         $this->db->join('employee', 'result.employee_id = employee.id');
+        $this->db->join('division', 'employee.division_id = division.id');
         $this->db->from($this->_table);
         return $this->db->get();             
     }

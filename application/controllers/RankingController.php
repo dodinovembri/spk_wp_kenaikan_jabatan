@@ -84,39 +84,40 @@ class RankingController extends CI_Controller {
         $result = $data;
 
         $date_of_promotion = $this->input->post('date_of_promotion');
-        $i = 0;
+        $i = 1;
 
         $this->ResultModel->updateStatus();
-        $vector = '';
-        $tot = [];
+        // $vector = '';
+        // $tot = [];
 
         foreach ($result as $key => $value) { 
 
-            if ($vector == $value['v_vector']) {
-                $tot[] = $key;
-            }else{
-                $i++;
-                $i = $i + count($tot);
-                $tot = [];
-            }
+            // if ($vector == $value['v_vector']) {
+            //     $tot[] = $key;
+            // }else{
+            //     $i++;
+            //     $i = $i + count($tot);
+            //     $tot = [];
+            // }
 
             $data = array(                
                 'date_of_promotion' => $date_of_promotion,
                 'employee_id' => $value['employee_id'],
                 'ranking' => $i,
+                'v_vector' => $value['v_vector'],
                 'status' => 2,
                 'created_at' => date("Y-m-d H-i-s"),
                 'created_by' => $this->session->userdata('id')
             );
-            // $i++;
+            $i++;
             $this->ResultModel->insert($data);
-            $vector = $value['v_vector'];
+            // $vector = $value['v_vector'];
         }
 
         // for update report
         $result_id = $this->ResultModel->getLast()->row();
-        $id_same = $this->ResultModel->getAllSame($result_id->ranking)->result();
-            
+        $id_same = $this->ResultModel->getAllSame($result_id->v_vector)->result();
+
         foreach ($id_same as $key => $value) {
             $employee = $this->EmployeeModel->getById($value->employee_id)->row();        
             $new_position = $this->input->post('new_position');

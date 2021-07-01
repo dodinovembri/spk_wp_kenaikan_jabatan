@@ -41,7 +41,7 @@
 											<td><?php echo $value->name; ?></td>
 											<td><?php echo $value->ranking;; ?></td>
 											<td><?php echo check_report_status($value->status) ?></td>
-											<td><?php echo $value->new_position;; ?></td>
+											<td><?php echo check_position($value->new_position); ?></td>
 										</tr>
 									<?php } ?>
 							</table>

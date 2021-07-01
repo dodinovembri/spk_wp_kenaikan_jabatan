@@ -29,6 +29,7 @@
 										<th width="10px">No</th>
 										<th>Tanggal Promosi</th>
 										<th>Nama Pegawai</th>
+										<th>Divisi</th>
 										<th>Ranking</th>
 										<th>Status</th>	
 										<th>Posisi Baru</th>	
@@ -41,6 +42,7 @@
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value->date_of_promotion; ?></td>
 											<td><?php echo $value->name; ?></td>
+											<td><?php echo $value->division_name; ?></td>
 											<td><?php echo $value->ranking; ?></td>
 											<td><?php echo check_report_status($value->status) ?></td>
 											<td><?php echo check_position($value->new_position); ?></td>

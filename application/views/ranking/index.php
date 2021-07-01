@@ -156,18 +156,18 @@
 									$vector = '';
 									$tot = []; ?>
 									<?php $no = 0; foreach ($v_vector as $key => $value) { 
-										// $no++;
+										$no++;
 										$employee_id = $value['employee_id'];
 										$sql ="SELECT * FROM employee WHERE id = $employee_id";
 										$query = $this->db->query($sql); 
 										
-										if ($vector == $value['v_vector']) {
-											$tot[] = $key;
-										}else{
-											$no++;
-											$no = $no + count($tot);
-											$tot = [];
-										}
+										// if ($vector == $value['v_vector']) {
+										// 	$tot[] = $key;
+										// }else{
+										// 	$no++;
+										// 	$no = $no + count($tot);
+										// 	$tot = [];
+										// }
 									?>
 										<tr>
 											<td><?php echo $no; ?></td>
