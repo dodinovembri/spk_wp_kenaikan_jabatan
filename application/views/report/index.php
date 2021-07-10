@@ -49,7 +49,7 @@
 											<td>
 											<a href="<?php echo base_url('report/edit/'); echo $value->result_id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
 											<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->result_id; ?>"><i class="fa fa-trash"></i></a>
-											</td>
+											</td-->
 										</tr>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->result_id; ?>">
 											<div class="modal-dialog">

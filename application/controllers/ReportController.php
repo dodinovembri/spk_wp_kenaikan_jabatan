@@ -104,15 +104,15 @@ class ReportController extends CI_Controller {
  
         // Add Header
         $pdf->Ln(10);
-        $pdf->SetFont('', 'B', 12);
+        $pdf->SetFont('', 'B', 8);
         $pdf->Cell(10, 8, "No", 1, 0, 'C');
-        $pdf->Cell(40, 8, "Tanggal Promosi", 1, 0, 'C');
-        // $pdf->Cell(50, 8, "Nama Pegawai", 1, 0, 'C');
+        $pdf->Cell(25, 8, "Tanggal Promosi", 1, 0, 'C');
+        $pdf->Cell(50, 8, "Nama Pegawai", 1, 0, 'C');
         $pdf->Cell(50, 8, "Divisi", 1, 0, 'C');
-        $pdf->Cell(24, 8, "Ranking", 1, 0, 'C');
-        $pdf->Cell(30, 8, "Status", 1, 0, 'C');
-        $pdf->Cell(35, 8, "Posisi Baru", 1, 1, 'C');
-        $pdf->SetFont('', '', 12);
+        $pdf->Cell(15, 8, "Ranking", 1, 0, 'C');
+        $pdf->Cell(20, 8, "Status", 1, 0, 'C');
+        $pdf->Cell(25, 8, "Posisi Baru", 1, 1, 'C');
+        $pdf->SetFont('', '', 8);
 
         foreach($reports as $k => $order) {
             $this->addRow($pdf, $k+1, $order);
@@ -127,11 +127,11 @@ class ReportController extends CI_Controller {
  
     private function addRow($pdf, $no, $order) {
         $pdf->Cell(10, 8, $no, 1, 0, 'C');
-        $pdf->Cell(40, 8, date('d-m-Y', strtotime($order->date_of_promotion)), 1, 0, 'C');
-        $pdf->Cell(50, 8, $order->name, 1, 0, 'C');
-        // $pdf->Cell(50, 8, $order->division_name, 1, 0, 'C');
-        $pdf->Cell(24, 8, $order->ranking, 1, 0, '');
-        $pdf->Cell(30, 8, check_report_status($order->status), 1, 0, 'C');
-        $pdf->Cell(35, 8, check_position($order->new_position), 1, 1, 'L');
+        $pdf->Cell(25, 8, date('d-m-Y', strtotime($order->date_of_promotion)), 1, 0, 'C');
+        $pdf->Cell(50, 8, $order->name, 1, 0, 'L');
+        $pdf->Cell(50, 8, $order->division_name, 1, 0, 'L');
+        $pdf->Cell(15, 8, $order->ranking, 1, 0, 'C');
+        $pdf->Cell(20, 8, check_report_status($order->status), 1, 0, 'C');
+        $pdf->Cell(25, 8, check_position($order->new_position), 1, 1, 'L');
     }
 }
