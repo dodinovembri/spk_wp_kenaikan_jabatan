@@ -21,8 +21,8 @@
 							<h3 class="box-title"><b>DaTa LaPoran PeranKingan PegaWai</small></h3></b>
 						</div>
 						<!-- /.box-header -->
-						<div class="box-body">	
-						<a href="<?= base_url('report/export/pdf') ?>"target="_blank" style="float:left; margin-right:2px; color:black" ><button>Pdf File</button></a>
+						<div class="box-body">
+							<a href="<?= base_url('report/export/pdf') ?>" target="_blank" style="float:left; margin-right:2px; color:black"><button>Pdf File</button></a>
 							<table id="example6" class="table table-bordered table-striped">
 								<thead style="background-color: #2E8B57; color: #F0F8FF">
 									<tr>
@@ -31,13 +31,15 @@
 										<th>Nama Pegawai</th>
 										<th>Divisi</th>
 										<th>Ranking</th>
-										<th>Status</th>	
-										<th>Posisi Baru</th>	
-										<th>Actions</th>									
+										<th>Status</th>
+										<th>Posisi Baru</th>
+										<!-- <th>Actions</th>									 -->
 									</tr>
 								</thead>
 								<tbody>
-									<?php $no = 0; foreach ($reports as $key => $value) { $no++; ?>
+									<?php $no = 0;
+									foreach ($reports as $key => $value) {
+										$no++; ?>
 										<tr>
 											<td><?php echo $no; ?></td>
 											<td><?php echo $value->date_of_promotion; ?></td>
@@ -46,10 +48,11 @@
 											<td><?php echo $value->ranking; ?></td>
 											<td><?php echo check_report_status($value->status) ?></td>
 											<td><?php echo check_position($value->new_position); ?></td>
-											<td>
-											<a href="<?php echo base_url('report/edit/'); echo $value->result_id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
-											<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->result_id; ?>"><i class="fa fa-trash"></i></a>
-											</td-->
+											<!-- <td>
+												<a href="<?php echo base_url('report/edit/');
+															echo $value->result_id; ?>"><i class="fa fa-pencil" style="margin-right: 6px;"></i></a>
+												<a href="#" data-toggle="modal" data-target="#delete<?php echo $value->result_id; ?>"><i class="fa fa-trash"></i></a>
+											</td> -->
 										</tr>
 										<div class="modal modal-warning fade" id="delete<?php echo $value->result_id; ?>">
 											<div class="modal-dialog">
@@ -74,7 +77,7 @@
 										</div>
 									<?php } ?>
 							</table>
-						</div>						
+						</div>
 						<!-- /.box-body -->
 					</div>
 					<!-- /.box -->
