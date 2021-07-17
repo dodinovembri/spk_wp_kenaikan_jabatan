@@ -94,7 +94,7 @@
                 <script>
                     Highcharts.chart('container', {
                         chart: {
-                            type: 'pie'
+                            type: 'area'
                         },
                         title: {
                             text: 'Grafik Per Divisi'
