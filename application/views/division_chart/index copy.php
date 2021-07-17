@@ -94,7 +94,7 @@
                 <script>
                     Highcharts.chart('container', {
                         chart: {
-                            type: 'area'
+                            type: 'pie'
                         },
                         title: {
                             text: 'Grafik Per Divisi'
@@ -140,20 +140,8 @@
                             enabled: false
                         },
                         series: [{
-                            name: 'Total ',
-                            data: [ 
-                            <?php foreach ($employees as $key => $value) { 
-                                $division = $value->division_name;
-                                $total = (int)$value->total;
-                                
-                                ?>
-                                {
-                                    name: <?php echo json_encode($division); ?>,
-                                    y: <?php echo $total ?>
-                                },
-                                
-                            <?php } ?>
-                            ]
+                            name: 'Divisi ',
+                            data: <?php echo json_encode($total); ?>
                         }]
                     });
                 </script>
