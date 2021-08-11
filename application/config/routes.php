@@ -163,3 +163,21 @@ $route['division_chart/edit/(:any)'] = 'DivisionChartController/edit/$1';
 $route['division_chart/show/(:any)'] = 'DivisionChartController/show/$1';
 $route['division_chart/update/(:any)'] = 'DivisionChartController/update/$1';
 $route['division_chart/destroy/(:any)'] = 'DivisionChartController/destroy/$1';
+
+// routes for alternative
+$route['alternative'] = 'AlternativeController';
+$route['alternative/create'] = 'AlternativeController/create';
+$route['alternative/store'] = 'AlternativeController/store';
+$route['alternative/edit/(:any)'] = 'AlternativeController/edit/$1';
+$route['alternative/show/(:any)'] = 'AlternativeController/show/$1';
+$route['alternative/update/(:any)'] = 'AlternativeController/update/$1';
+$route['alternative/destroy/(:any)'] = 'AlternativeController/destroy/$1';
+$route['school_alternative'] = 'AlternativeController/school_alternative';
+
+// routes for alternative value
+$route['alternative_values/(:any)'] = 'AlternativeValueController/index/$1';
+$route['alternative_value/create'] = 'AlternativeValueController/create';
+$route['alternative_value/store'] = 'AlternativeValueController/store';
+$route['alternative_value/edit/(:any)'] = 'AlternativeValueController/edit/$1';
+$route['alternative_value/update/(:any)'] = 'AlternativeValueController/update/$1';
+$route['alternative_value/destroy/(:any)'] = 'AlternativeValueController/destroy/$1';
