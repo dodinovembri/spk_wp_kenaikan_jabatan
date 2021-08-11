@@ -36,7 +36,6 @@
 											if ($value->criteria_code == 'C7') { ?>
 												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?> <?php echo "(Bobot: $value->criteria_weight%)" ?></label>
 												<select class="form-control" name="criteria_criterion[]" required="">
-													<option value="">Pilih</option>
 													<?php
 													$criteria_id = $value->id;
 													$sql = "SELECT * FROM criterion_value WHERE criteria_id = $criteria_id";
@@ -45,7 +44,7 @@
 													<?php foreach ($query->result() as $row) { ?>
 														<option value="<?php echo $criteria_id;
 																		echo '&';
-																		echo $row->id; ?>"><?php echo $row->information; ?></option>
+																		echo $row->id; ?>"><?php echo $row->benchmark; ?></option>
 													<?php } ?>
 												</select>
 											<?php }
@@ -53,7 +52,6 @@
 											if ($value->criteria_code == 'C9') { ?>
 												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?> <?php echo "(Bobot: $value->criteria_weight%)" ?></label>
 												<select class="form-control" name="criteria_criterion[]" required="">
-													<option value="">Pilih</option>
 													<?php
 													$criteria_id = $value->id;
 													$sql = "SELECT * FROM criterion_value WHERE criteria_id = $criteria_id";
@@ -62,7 +60,7 @@
 													<?php foreach ($query->result() as $row) { ?>
 														<option value="<?php echo $criteria_id;
 																		echo '&';
-																		echo $row->id; ?>"><?php echo $row->information; ?></option>
+																		echo $row->id; ?>"><?php echo $row->benchmark; ?></option>
 													<?php } ?>
 												</select>
 											<?php }
@@ -70,7 +68,6 @@
 											if ($value->criteria_code == 'C1' || $value->criteria_code == 'C2' || $value->criteria_code == 'C3' || $value->criteria_code == 'C4' || $value->criteria_code == 'C5' || $value->criteria_code == 'C6' || $value->criteria_code == 'C8') { ?>
 												<label for="exampleInputCriteriaName"><?php echo $value->criteria_name; ?> <?php echo "(Bobot: $value->criteria_weight%)" ?></label>
 												<select class="form-control" name="criteria_criterion[]" required="">
-													<option value="">Pilih</option>
 													<?php
 													$criteria_id = $value->id;
 													$sql = "SELECT * FROM criterion_value WHERE criteria_id = $criteria_id";
@@ -79,7 +76,7 @@
 													<?php foreach ($query->result() as $row) { ?>
 														<option value="<?php echo $criteria_id;
 																		echo '&';
-																		echo $row->id; ?>"><?php echo $row->information; ?></option>
+																		echo $row->id; ?>"><?php echo $row->benchmark; ?></option>
 													<?php } ?>
 												</select>
 											<?php }

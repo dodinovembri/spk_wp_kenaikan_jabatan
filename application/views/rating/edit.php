@@ -47,7 +47,7 @@
 										<select class="form-control" name="criterion_value_id" required="">
 											<option value="">Pilih</option>
 											<?php foreach ($criterion_values as $key => $value) { ?>
-												<option value="<?php echo $value->id; ?>"><?php echo $value->information; ?></option>
+												<option value="<?php echo $value->id; ?>"><?php echo $value->benchmark; ?></option>
 											<?php } ?>
 										</select>
 									</div>
